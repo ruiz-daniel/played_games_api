@@ -1,6 +1,202 @@
 C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\DRG_Api.exe
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\A Rose in the Twilight.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\About You Videogames.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Age of Empires II.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Assasin's Creed Altair Chronicles.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Assassin's Creed IV Black Flag.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Assassin's Creed Origins.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Astral Chain.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Atelier Ryza Ever Darkness & The Secret Hideout.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Avatar The Last Airbender Into the Inferno.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bastion.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bayonetta 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bayonetta.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bleach 3rd Phantom.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bleach Dark Souls.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bleach DS 4th Flame Bringer.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bleach The Blade of Fate.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bloodstained Ritual of the Night.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bloody Roar 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Blur.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Bully.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Call of Duty Modern Warfare 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Call of Duty WWII.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Code Vein.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Control.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Crash Team Racing.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Crystar.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Cuphead.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Cyberpunk Bartender Action VA-11 Hall-A.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Dark Souls 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Dark Souls.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Darksiders 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Dead or Alive 5 Last Round.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Dead Or Alive 6.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Devil May Cry 4.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Devil May Cry V.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Digimon Rumble Arena.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Digimon Story Cyber Sleuth.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Digimon World Dusk.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\DiRT Rally.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Disco Elyssium.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\DMC Devil May Cry.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Doki Doki Literature Club.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Dota 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Dragon Age Inquisition.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Dragon Age Origins.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Dragon Ball FighterZ.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Dragon Ball Xenoverse.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Drakengard 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Driver 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Driver.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Duck Game.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\E00FGkvWYAIe11o.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Euro Truck Simulator 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\FAR Lone Sails.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\FIFA 08.JPG
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\FIFA 14.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\FIFA 15.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\FIFA 18.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\FIFA 19.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Final Fantasy 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Final Fantasy 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Final Fantasy VII.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Final Fantasy XV.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Final Fantasy.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Fire Emblem Awakening.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Fire Emblem Three Houses.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Firewatch.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Funbag Fantasy.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Gran Turismo.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Grand Theft Auto San Andreas.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Grand Theft Auto V.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Greedfall.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\GRIS.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Guilty Gear Strive.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Guilty Gear Xrd Rev 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Guilty Gear XX Accent Core +R.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Guitar Hero III Legends of Rock.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Hades.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Harry Potter and the Sorcerer's Stone.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Hollow Knight.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Horizon Zero Dawn.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Journey.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Jump Force.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Kingdom Hearts 358-2 Days.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Kirby Mass Attack.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\League of Legends.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Legends of Runeterra.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Life is Strange Before the Storm.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Life is Strange.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Limbo.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Lords of The Fallen.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Magic The Gathering Arena.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Mario Kart DS.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Mass Effect 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Mass Effect 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Mass Effect.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Medal of Honor Warfighter.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Megaman ZX Advent.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Metal Gear Rising Revengeance.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Metal Gear Solid V The Phantom Pain.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Metal Slug 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Metal Slug 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Metal Slug.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Middle-Earth Shadow of Mordor.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Minecraft.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Naruto Shippuden Ultimate Ninja Storm 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Naruto Shippuden Ultimate Ninja Storm 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Naruto Shippuden Ultimate Ninja Storm 4.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Naruto Shippuden Ultimate Ninja Storm Revolution.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Naruto Ultimate Ninja Storm.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Nascar Heat.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Need For Speed Most Wanted.jpg
 C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Nier Automata.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Nier Replicant ver 1.22474487139....jpg
 C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Nier.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Night in the Woods.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Ninja Blade.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Nioh 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Nioh.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Oninaki.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Ori and the Blind Forest.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Persona 5 Strikers.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Persona 5.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Pokemon Shield.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Pokémon Diamond.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Pokémon Ranger Shadows of Almia.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Pokémon Sapphire.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Pokémon Shield.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Portal 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Portal Knights.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Portal.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Pro Evolution Soccer 2002.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Pro Evolution Soccer 2012.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Pro Evolution Soccer 2013.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Prototype 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Psycho Pass Mandatory Happiness.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Quake 3 Arena.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Rage.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Regalia of Men and Monarchs.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Rivals of Aether.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Rocket League.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\RWBY Grimn Eclipse.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Sacred 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Sacred.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Saints Row 4.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Saints Row Gat Out of Hell.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Sekiro Shadows Die Twice.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Shin Megami Tensei Devil Survivor 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Shin Megami Tensei Devil Survivor Overclocked.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Shin Megami Tensei Devil Survivor.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Shovel Knight.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Sleeping Dogs.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Soulcalibur VI.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Spiderman (2000).jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Spiderman 2 Enter Electro.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Star Wars Jedi Fallen Order.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Star Wars The Force Unleashed 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Steam World Dig 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Steam World Dig.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Street Fighter Alpha 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Street Fighters V.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Super Smash Bros 4 WiiU.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Super Smash Bros Brawl.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Super Smash Bros Ultimate.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Tales of Berseria.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Tales of Vesperia Definitive Edition.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Tales of Zestiria.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Tekken 3.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Tekken 7.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\The Beginner's Guide.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\The King of Fighters 98.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\The King of Fighters XIV.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\The Legend of Zelda Breath of the Wild.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\The Legend of Zelda Ocarina of Time 3D.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\The Red Strings Club.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\The Witcher 2 Assassins of Kings.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\The Witcher 3 Wild Hunt.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\The Witness.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Titanfall 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Tomb Rider (2013).jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Tony Hawk Pro Skater 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Tower Hunter Erza's Trial.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Toy Story Racer.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Trauma Center Under The Knife 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Twisted Metal 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Undertale.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Unreal Tournament.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Vanquish.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Virtua Tennis 4.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Watchdogs 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Watchdogs.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\Wizard of Legend.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\X-Blades.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\X-Men Mutant Academy 2.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\YuGiOh 5DS World Championship 2009.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\YuGiOh Forbidden Memories.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\YuGiOh GX Spirit Caller.jpg
+C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\wwwroot\game_images\YuGiOh Tag Force.jpg
 C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\appsettings.Development.json
 C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\appsettings.json
 C:\DotNet Projects\DRG_Api\bin\Release\net5.0\publish\DRG_Api.dll

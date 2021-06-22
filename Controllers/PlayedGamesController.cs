@@ -35,7 +35,7 @@ namespace DRG_Api.Controllers
 
         public async Task<ActionResult<IEnumerable<PlayedGame>>> GetplayedGames()
         {
-            var playedgames = await _context.playedgame.ToListAsync();
+            var playedgames = await _context.playedgame.OrderByDescending(game => game.rating).ToListAsync();
             foreach (PlayedGame game in playedgames)
             {
                 game.platform = await _context.platform.FindAsync(game.platformid);
@@ -214,6 +214,7 @@ namespace DRG_Api.Controllers
         public async Task<ActionResult<PlayedGame>> PostPlayedGame(PlayedGame playedGame)
         {
             playedGame.id = System.Guid.NewGuid().ToString();
+            playedGame.image = Path.Combine("https://localhost:5001/game_images/", playedGame.image);
             _context.playedgame.Add(playedGame);
             await _context.SaveChangesAsync();
 
@@ -255,6 +256,8 @@ namespace DRG_Api.Controllers
             return await _context.status.ToListAsync();
         }
 
+
+
         [HttpPost("gameImage")]
         public string UploadFile(IFormFile image)
         {
@@ -277,4 +280,24 @@ namespace DRG_Api.Controllers
             return uniqueFileName;
         }
     }
+
+    // [HttpGet("fix")]
+    // public async Task<IActionResult> fix()
+    // {
+    //     var playedgames = await _context.playedgame.OrderByDescending(game => game.rating).ToListAsync();
+    //     foreach (PlayedGame playedGame in playedgames)
+    //     {
+    //         playedGame.image = Path.Combine("https://localhost:5001/game_images/", playedGame.name + ".jpg");
+    //         _context.Entry(playedGame).State = EntityState.Modified;
+
+    //         try
+    //         {
+    //             await _context.SaveChangesAsync();
+    //         }
+    //         catch (DbUpdateConcurrencyException) { }
+    //     }
+
+    //     return NoContent();
+
+    // }
 }
