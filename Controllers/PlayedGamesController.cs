@@ -256,6 +256,28 @@ namespace DRG_Api.Controllers
             return await _context.status.ToListAsync();
         }
 
+        [HttpGet("top10games")]
+        public async Task<ActionResult<IEnumerable<Top10Game>>> GetTop10Games()
+        {
+            var top10 = await _context.top10games.ToListAsync();
+            foreach (Top10Game game in top10)
+            {
+                game.game = await _context.playedgame.FindAsync(game.gameid);
+                game.game.platform = await _context.platform.FindAsync(game.game.platformid);
+                game.game.status = await _context.status.FindAsync(game.game.statusid);
+            }
+            return top10;
+        }
+
+        [HttpPost("top10games")]
+        public async Task<ActionResult<Top10Game>> PostTop10Game(Top10Game game)
+        {
+            _context.top10games.Add(game);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetTop10Games), new { id = game.id }, game);
+        }
+
 
 
         [HttpPost("gameImage")]
