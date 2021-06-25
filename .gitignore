@@ -1,3 +1,9 @@
 bin/
 .vscode/
 obj/
+obj/DRG_Api.csproj.nuget.dgspec.json
+obj/project.nuget.cache
+obj/Debug/net5.0/DRG_Api.assets.cache
+obj/Debug/net5.0/DRG_Api.dll
+obj/Debug/net5.0/DRG_Api.pdb
+obj/Debug/net5.0/ref/DRG_Api.dll

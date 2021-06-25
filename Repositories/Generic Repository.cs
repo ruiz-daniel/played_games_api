@@ -40,9 +40,9 @@ namespace DRG_Api.Repositories
             return entity;
         }
 
-        public Task<List<T>> FindBy(Expression<Func<T, bool>> expression)
+        public async Task<List<T>> FindBy(Expression<Func<T, bool>> expression)
         {
-            return _context.Set<T>().Where(expression).ToListAsync();
+            return await _context.Set<T>().Where(expression).ToListAsync();
 
         }
         public async Task<List<T>> FindAll()

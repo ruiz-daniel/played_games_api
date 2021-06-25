@@ -35,5 +35,17 @@ namespace DRG_Api.Repositories
 
             return game;
         }
+
+        public async Task<List<PlayedGame>> FindBy(Expression<Func<PlayedGame, bool>> expression)
+        {
+            var playedgames = await _context.playedgame.Where(expression).ToListAsync();
+            foreach (PlayedGame game in playedgames)
+            {
+                game.platform = await _context.platform.FindAsync(game.platformid);
+                game.status = await _context.status.FindAsync(game.statusid);
+            }
+            return playedgames;
+
+        }
     }
 }
