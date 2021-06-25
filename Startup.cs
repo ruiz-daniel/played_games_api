@@ -14,8 +14,8 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Cors;
 
 using Microsoft.EntityFrameworkCore;
-using DRG_Api.Models;
 using DRG_Api.Contexts;
+using DRG_Api.Services;
 
 namespace DRG_Api
 {
@@ -52,6 +52,7 @@ namespace DRG_Api
                     builder.WithOrigins("http://localhost").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
                 });
         });
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
