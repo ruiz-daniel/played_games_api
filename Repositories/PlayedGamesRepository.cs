@@ -16,7 +16,7 @@ namespace DRG_Api.Repositories
         {
 
         }
-        public async Task<List<PlayedGame>> FindAll()
+        new public async Task<List<PlayedGame>> FindAll()
         {
             var playedgames = await _context.playedgame.OrderByDescending(game => game.rating).ToListAsync();
             foreach (PlayedGame game in playedgames)
@@ -27,7 +27,7 @@ namespace DRG_Api.Repositories
             return playedgames;
         }
 
-        public async Task<PlayedGame> Find(string id)
+        new public async Task<PlayedGame> Find(string id)
         {
             var game = await _context.playedgame.FindAsync(id);
             game.platform = await _context.platform.FindAsync(game.platformid);
@@ -36,7 +36,7 @@ namespace DRG_Api.Repositories
             return game;
         }
 
-        public async Task<List<PlayedGame>> FindBy(Expression<Func<PlayedGame, bool>> expression)
+        new public async Task<List<PlayedGame>> FindBy(Expression<Func<PlayedGame, bool>> expression)
         {
             var playedgames = await _context.playedgame.Where(expression).ToListAsync();
             foreach (PlayedGame game in playedgames)

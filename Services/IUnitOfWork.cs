@@ -7,6 +7,7 @@ namespace DRG_Api.Services
         IPlayedGamesRepository PlayedGames { get; }
         public IStatusRepository Statuses { get; }
         public IPlatformRepository Platforms { get; }
+        public ITop10GamesRepository Top10Games { get; }
         int Save();
     }
 }

@@ -1,18 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DRG_Api.Models;
-using DRG_Api.Contexts;
 using DRG_Api.Services;
-using System.Net.Http;
-using System.Text.Json;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
-using Microsoft.AspNetCore.Cors;
 
 namespace DRG_Api.Controllers
 {
@@ -123,27 +118,54 @@ namespace DRG_Api.Controllers
             return await _repositories.Statuses.FindAll();
         }
 
-        //     [HttpGet("top10games")]
-        //     public async Task<ActionResult<IEnumerable<Top10Game>>> GetTop10Games()
-        //     {
-        //         var top10 = await _context.top10games.ToListAsync();
-        //         foreach (Top10Game game in top10)
-        //         {
-        //             game.game = await _context.playedgame.FindAsync(game.gameid);
-        //             game.game.platform = await _context.platform.FindAsync(game.game.platformid);
-        //             game.game.status = await _context.status.FindAsync(game.game.statusid);
-        //         }
-        //         return top10;
-        //     }
+        [HttpGet("top10games")]
+        public async Task<ActionResult<IEnumerable<Top10Game>>> GetTop10Games()
+        {
+            return await _repositories.Top10Games.FindAll();
+        }
 
-        //     [HttpPost("top10games")]
-        //     public async Task<ActionResult<Top10Game>> PostTop10Game(Top10Game game)
-        //     {
-        //         _context.top10games.Add(game);
-        //         await _context.SaveChangesAsync();
+        [HttpPost("top10games")]
+        public async Task<ActionResult<Top10Game>> PostTop10Game(Top10Game game)
+        {
+            await _repositories.Top10Games.CreateAsync(game);
 
-        //         return CreatedAtAction(nameof(GetTop10Games), new { id = game.id }, game);
-        //     }
+            return CreatedAtAction(nameof(GetTop10Games), new { id = game.id }, game);
+        }
+
+        [HttpPut("top10games/{id}")]
+        public async Task<IActionResult> PutTop10Game(int id, Top10Game game)
+        {
+            if (id != game.id)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                await _repositories.Top10Games.UpdateAsync(game);
+            }
+            catch
+            {
+                return NotFound();
+            }
+
+
+            return NoContent();
+        }
+
+        [HttpDelete("top10games/{id}")]
+        public async Task<IActionResult> DeleteTop10Game(int id)
+        {
+            var game = await _repositories.Top10Games.Find(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+
+            await _repositories.Top10Games.DeleteAsync(game);
+
+            return NoContent();
+        }
 
         [HttpPost("gameImage")]
         public string UploadFile(IFormFile image)
@@ -168,7 +190,7 @@ namespace DRG_Api.Controllers
         }
         // }
 
-        // [HttpGet("fix")]
+        // [HttpGet("fiximages")]
         // public async Task<IActionResult> fix()
         // {
         //     var playedgames = await _context.playedgame.OrderByDescending(game => game.rating).ToListAsync();
@@ -187,110 +209,5 @@ namespace DRG_Api.Controllers
         //     return NoContent();
 
         // }
-
-        //     //GET: api/PlayedGames/publisher/pub
-        //     [HttpGet("publisher/{publisher}")]
-        //     public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromPublisher(string publisher)
-        //     {
-        //         var playedgames = await _context.playedgame.Where(game => game.publisher.Contains(publisher)).ToListAsync();
-        //         foreach (PlayedGame game in playedgames)
-        //         {
-        //             game.platform = await _context.platform.FindAsync(game.platformid);
-        //             game.status = await _context.status.FindAsync(game.statusid);
-        //         }
-        //         return playedgames;
-        //     }
-
-        //     //GET: api/PlayedGames/developer/dev
-        //     [HttpGet("developer/{dev}")]
-        //     public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromDeveloper(string dev)
-        //     {
-        //         var playedgames = await _context.playedgame.Where(game => game.developer.Contains(dev)).ToListAsync();
-        //         foreach (PlayedGame game in playedgames)
-        //         {
-        //             game.platform = await _context.platform.FindAsync(game.platformid);
-        //             game.status = await _context.status.FindAsync(game.statusid);
-        //         }
-        //         return playedgames;
-        //     }
-
-        //     //GET: api/PlayedGames/genre/genre
-        //     [HttpGet("genre/{genre}")]
-        //     public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromGenre(string genre)
-        //     {
-        //         var playedgames = await _context.playedgame.Where(game => game.genre.Contains(genre)).ToListAsync();
-        //         foreach (PlayedGame game in playedgames)
-        //         {
-        //             game.platform = await _context.platform.FindAsync(game.platformid);
-        //             game.status = await _context.status.FindAsync(game.statusid);
-        //         }
-        //         return playedgames;
-        //     }
-
-        //     [HttpGet("year/{year}")]
-        //     public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromYear(string year)
-        //     {
-        //         var playedgames = await _context.playedgame.Where(game => game.year.Equals(year)).ToListAsync();
-        //         foreach (PlayedGame game in playedgames)
-        //         {
-        //             game.platform = await _context.platform.FindAsync(game.platformid);
-        //             game.status = await _context.status.FindAsync(game.statusid);
-        //         }
-        //         return playedgames;
-        //     }
-
-        //     [HttpGet("rating/{rating}")]
-        //     public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromRating(int rating)
-        //     {
-        //         var playedgames = await _context.playedgame.Where(game => game.rating == rating).ToListAsync();
-        //         foreach (PlayedGame game in playedgames)
-        //         {
-        //             game.platform = await _context.platform.FindAsync(game.platformid);
-        //             game.status = await _context.status.FindAsync(game.statusid);
-        //         }
-        //         return playedgames;
-        //     }
-
-        //     [HttpGet("status/{status}")]
-        //     public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromStatus(int status)
-        //     {
-        //         var playedgames = await _context.playedgame.Where(game => game.statusid == status).ToListAsync();
-        //         foreach (PlayedGame game in playedgames)
-        //         {
-        //             game.platform = await _context.platform.FindAsync(game.platformid);
-        //             game.status = await _context.status.FindAsync(game.statusid);
-        //         }
-        //         return playedgames;
-        //     }
-
-        //     [HttpGet("platform/{platform}")]
-        //     public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromPlatform(int platform)
-        //     {
-        //         var playedgames = await _context.playedgame.Where(game => game.platformid == platform).ToListAsync();
-        //         foreach (PlayedGame game in playedgames)
-        //         {
-        //             game.platform = await _context.platform.FindAsync(game.platformid);
-        //             game.status = await _context.status.FindAsync(game.statusid);
-        //         }
-        //         return playedgames;
-        //     }
-
-        //     [HttpGet("api")]
-        //     public async Task<ActionResult<List<APIGame>>> GetFromAPI()
-        //     {
-        //         var client = _httpClientFactory.CreateClient("games");
-        //         var request = new HttpRequestMessage(HttpMethod.Get, "game");
-        //         var response = await client.SendAsync(request);
-
-        //         if (response.IsSuccessStatusCode)
-        //         {
-        //             using var responseStream = await response.Content.ReadAsStreamAsync();
-        //             return await JsonSerializer.DeserializeAsync<List<APIGame>>(responseStream);
-        //         }
-        //         else
-        //         {
-        //             return new List<APIGame>();
-        //         }
-        //     }
     }
 }
