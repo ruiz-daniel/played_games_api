@@ -54,6 +54,13 @@ namespace DRG_Api.Controllers
             return playedgames;
         }
 
+        [HttpGet("status/{status}")]
+        public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromStatus(int status)
+        {
+            var playedgames = await _repositories.PlayedGames.FindBy(game => game.statusid == status);
+            return playedgames;
+        }
+
         // PUT: api/PlayedGames/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
