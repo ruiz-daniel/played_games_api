@@ -38,7 +38,7 @@ namespace DRG_Api.Repositories
 
         new public async Task<List<PlayedGame>> FindBy(Expression<Func<PlayedGame, bool>> expression)
         {
-            var playedgames = await _context.playedgame.Where(expression).ToListAsync();
+            var playedgames = await _context.playedgame.OrderByDescending(game => game.rating).Where(expression).ToListAsync();
             foreach (PlayedGame game in playedgames)
             {
                 game.platform = await _context.platform.FindAsync(game.platformid);
