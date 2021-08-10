@@ -45,6 +45,10 @@ namespace DRG_Api.Repositories
             return await _context.Set<T>().Where(expression).ToListAsync();
 
         }
+        public async Task<T> FindOneBy(Expression<Func<T, bool>> expression)
+        {
+            return await _context.Set<T>().Where(expression).FirstAsync();
+        }
         public async Task<List<T>> FindAll()
         {
             return await _context.Set<T>().ToListAsync();

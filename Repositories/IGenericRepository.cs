@@ -10,6 +10,7 @@ namespace DRG_Api.Repositories
         Task<T> Find(string id);
         Task<List<T>> FindAll();
         Task<List<T>> FindBy(Expression<Func<T, bool>> expression);
+        Task<T> FindOneBy(Expression<Func<T, bool>> expression);
         Task<T> CreateAsync(T entity);
         // Task CreateListAsync(IEnumerable<T> entities);
         Task<T> UpdateAsync(T entity);
