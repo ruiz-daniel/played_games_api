@@ -11,26 +11,29 @@
  Target Server Version : 80025
  File Encoding         : 65001
 
- Date: 29/07/2021 15:58:44
+ Date: 07/08/2021 16:16:15
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for __efmigrationshistory
+-- Table structure for character
 -- ----------------------------
-DROP TABLE IF EXISTS `__efmigrationshistory`;
-CREATE TABLE `__efmigrationshistory`  (
-  `MigrationId` varchar(95) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `ProductVersion` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`MigrationId`) USING BTREE
+DROP TABLE IF EXISTS `character`;
+CREATE TABLE `character`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `wikia_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `favorite` tinyint(1) NULL DEFAULT 0,
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of __efmigrationshistory
+-- Records of character
 -- ----------------------------
-INSERT INTO `__efmigrationshistory` VALUES ('20210525230936_InitialDb', '5.0.5');
 
 -- ----------------------------
 -- Table structure for platform
@@ -40,7 +43,7 @@ CREATE TABLE `platform`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of platform
@@ -97,7 +100,7 @@ INSERT INTO `playedgame` VALUES ('0b071dd8-deda-415b-950b-aaa407856701', 'Nascar
 INSERT INTO `playedgame` VALUES ('0ceccb35-85d1-4e44-a1ff-8108af09b729', 'Metal Gear Solid V The Phantom Pain', '2015', 'Kojima Productions', 'Konami', 'Open World 3rd Person Shooter', 6, 1, 5, 'https://localhost:5001/game_images/Metal Gear Solid V The Phantom Pain.jpg');
 INSERT INTO `playedgame` VALUES ('0d125528-db10-4f2d-a819-85be6aa19e7e', 'Star Wars The Force Unleashed 2', '2010', 'Aspyr Media', 'Lucas Art', 'Hack\'n Slash', 6, 1, 5, 'https://localhost:5001/game_images/Star Wars The Force Unleashed 2.jpg');
 INSERT INTO `playedgame` VALUES ('0d97e7ac-5698-42b0-ba21-438110621a43', 'Blazblue Cross Tag Battle', '2018', 'Arc System Works', 'Arc System Works', 'Fighting', 5, 1, 2, 'https://localhost:5001/game_images/Blazblue Cross Tag Battle.jpg');
-INSERT INTO `playedgame` VALUES ('0dbc4e11-fef1-4ec4-8e56-a1fc4ffd2dc0', 'Tales of Berseria', '2016', 'Bandai Namco', 'Bandai Namco', 'Action JRPG', 6, 1, 3, 'https://localhost:5001/game_images/Tales of Berseria.jpg');
+INSERT INTO `playedgame` VALUES ('0dbc4e11-fef1-4ec4-8e56-a1fc4ffd2dc0', 'Tales of Berseria', '2016', 'Bandai Namco', 'Bandai Namco', 'Action JRPG', 5, 1, 1, 'https://localhost:5001/game_images/Tales of Berseria.jpg');
 INSERT INTO `playedgame` VALUES ('0faaf5d2-38d9-4aca-a7d0-1cda1b50c1fb', 'Control', '2019', 'Remedy', '505 Games', 'Action Adventure', 6, 1, 5, 'https://localhost:5001/game_images/Control.jpg');
 INSERT INTO `playedgame` VALUES ('1009f5f0-0e12-45b7-ba68-19ced577bd3c', 'Trauma Center Under The Knife 2', '2008', 'ATLUS', 'ATLUS', 'Puzzle', 9, 8, 5, 'https://localhost:5001/game_images/Trauma Center Under The Knife 2.jpg');
 INSERT INTO `playedgame` VALUES ('119f51c3-dc36-4295-9cdf-e1c6984af4e1', 'Fire Emblem Awakening', '2012', 'Intelligent Systems', 'Nintendo', 'Tactical JRPG', 8, 9, 1, 'https://localhost:5001/game_images/Fire Emblem Awakening.jpg');
@@ -105,7 +108,7 @@ INSERT INTO `playedgame` VALUES ('1649133e-d70c-4156-aeac-21da070633b4', 'Nier A
 INSERT INTO `playedgame` VALUES ('184d54e2-ba0d-42b8-8b96-3381fd5e8424', 'Disco Elyssium', '2019', 'ZA/UM', 'ZA/UM', 'Point & Click RPG', 9, 1, 5, 'https://localhost:5001/game_images/Disco Elyssium.jpg');
 INSERT INTO `playedgame` VALUES ('1aec268c-11ae-4f40-9d5b-049d700ab000', 'Nioh 2', '2020', 'Team Ninja', 'Koei Tecmo', 'Action RPG / Soulslike', 9, 1, 3, 'https://localhost:5001/game_images/Nioh 2.jpg');
 INSERT INTO `playedgame` VALUES ('1afcad55-427d-4323-a81c-2cf5335a2e7a', 'Driver 2', '2000', 'Ubisoft Reflections', 'Infogrames', 'Open World Driving', 6, 2, 2, 'https://localhost:5001/game_images/Driver 2.jpg');
-INSERT INTO `playedgame` VALUES ('1d2f7fff-a6b8-4dcf-93be-765dbde1e0b8', 'Guilty Gear Strive', '2021', 'Arc System Works', 'Arc System Works, Bandai Namco', 'Fighting', 9, 1, 3, 'https://localhost:5001/game_images/Guilty Gear Strive.jpg');
+INSERT INTO `playedgame` VALUES ('1d2f7fff-a6b8-4dcf-93be-765dbde1e0b8', 'Guilty Gear Strive', '2021', 'Arc System Works', 'Arc System Works, Bandai Namco', 'Fighting', 8, 1, 3, 'https://localhost:5001/game_images/Guilty Gear Strive.jpg');
 INSERT INTO `playedgame` VALUES ('1e139545-589c-420a-8472-38e635ce5adc', 'Bound By Flame', '2014', 'Spiders', 'Focus Home Interactive', 'Action RPG', 5, 1, 1, 'https://localhost:5001/game_images/Bound By Flame.jpg');
 INSERT INTO `playedgame` VALUES ('1fac65d0-4b6a-4742-8924-2826dc6befe0', 'Sacred 3', '2014', 'Keen Games', 'Deep Silver', 'Isometric Action', 5, 1, 5, 'https://localhost:5001/game_images/Sacred 3.jpg');
 INSERT INTO `playedgame` VALUES ('1fd77937-6279-42dc-9009-2d7ad489f265', 'Cuphead', '2017', 'Studio MDHR', 'Studio MDHR', 'Platform Action', 8, 1, 5, 'https://localhost:5001/game_images/Cuphead.jpg');
@@ -296,7 +299,7 @@ CREATE TABLE `status`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of status
@@ -309,20 +312,23 @@ INSERT INTO `status` VALUES (5, 'Dropped');
 INSERT INTO `status` VALUES (6, 'Replaying');
 
 -- ----------------------------
--- Table structure for top10actiongames
+-- Table structure for top10characters
 -- ----------------------------
-DROP TABLE IF EXISTS `top10actiongames`;
-CREATE TABLE `top10actiongames`  (
-  `id` int NOT NULL,
-  `game_fk` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+DROP TABLE IF EXISTS `top10characters`;
+CREATE TABLE `top10characters`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `characterid` int NOT NULL,
   `pos` int NOT NULL,
+  `top10nameid` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `top10_game`(`game_fk`) USING BTREE,
-  CONSTRAINT `top10actiongames_ibfk_1` FOREIGN KEY (`game_fk`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  INDEX `characterid`(`characterid`) USING BTREE,
+  INDEX `top10nameid`(`top10nameid`) USING BTREE,
+  CONSTRAINT `top10characters_ibfk_1` FOREIGN KEY (`characterid`) REFERENCES `character` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `top10characters_ibfk_2` FOREIGN KEY (`top10nameid`) REFERENCES `top10name` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of top10actiongames
+-- Records of top10characters
 -- ----------------------------
 
 -- ----------------------------
@@ -333,80 +339,47 @@ CREATE TABLE `top10games`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `pos` int NOT NULL,
+  `top10nameid` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `FK_top10games_playedgame_game_fk`(`gameid`) USING BTREE,
-  CONSTRAINT `top10_game` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  INDEX `top10_name`(`top10nameid`) USING BTREE,
+  CONSTRAINT `top10_game` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `top10_name` FOREIGN KEY (`top10nameid`) REFERENCES `top10name` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of top10games
 -- ----------------------------
-INSERT INTO `top10games` VALUES (1, '1649133e-d70c-4156-aeac-21da070633b4', 1);
-INSERT INTO `top10games` VALUES (3, '285132a4-375d-4978-a68c-b7e72c0b6e4b', 2);
-INSERT INTO `top10games` VALUES (4, '71224041-c215-42f4-861d-c3fcf80960ff', 2);
-INSERT INTO `top10games` VALUES (5, '23ffb351-4ae1-461d-8d6e-1a652762ec05', 2);
-INSERT INTO `top10games` VALUES (6, 'e8ab5ecd-14e2-4e42-a58a-9c649923fd92', 3);
-INSERT INTO `top10games` VALUES (7, '8888f455-083e-4643-b4df-ccfa1968f021', 3);
-INSERT INTO `top10games` VALUES (9, '97f3de86-4cbe-4061-adab-156af2bd2b81', 5);
-INSERT INTO `top10games` VALUES (10, 'a8a747fd-c5c3-49d4-ba65-6cea329b977d', 6);
-INSERT INTO `top10games` VALUES (11, '92d66d1f-1237-41b4-8dc6-25a581e4d14f', 6);
-INSERT INTO `top10games` VALUES (12, '4a2a3240-4f87-4835-bfd6-2096978abbb2', 7);
-INSERT INTO `top10games` VALUES (13, '66de123b-2a1b-4b99-b78e-0b95a109dd9b', 8);
-INSERT INTO `top10games` VALUES (14, 'abc636e2-be01-43c4-9fe2-bc59ea0ca3ab', 9);
-INSERT INTO `top10games` VALUES (15, 'fffdb5e7-1af6-4c8f-85fe-66f510250f6a', 1);
-INSERT INTO `top10games` VALUES (18, 'ce1e976e-3c67-4d31-80e0-9ba1c5e0c223', 10);
-INSERT INTO `top10games` VALUES (19, '7d45769b-393d-4a09-9870-76f83ef94669', 1);
-INSERT INTO `top10games` VALUES (23, '50a01c39-5efb-41fc-9101-d8b2fc166e7d', 4);
+INSERT INTO `top10games` VALUES (1, '1649133e-d70c-4156-aeac-21da070633b4', 1, 1);
+INSERT INTO `top10games` VALUES (3, '285132a4-375d-4978-a68c-b7e72c0b6e4b', 2, 1);
+INSERT INTO `top10games` VALUES (4, '71224041-c215-42f4-861d-c3fcf80960ff', 2, 1);
+INSERT INTO `top10games` VALUES (5, '23ffb351-4ae1-461d-8d6e-1a652762ec05', 2, 1);
+INSERT INTO `top10games` VALUES (6, 'e8ab5ecd-14e2-4e42-a58a-9c649923fd92', 3, 1);
+INSERT INTO `top10games` VALUES (7, '8888f455-083e-4643-b4df-ccfa1968f021', 3, 1);
+INSERT INTO `top10games` VALUES (9, '97f3de86-4cbe-4061-adab-156af2bd2b81', 5, 1);
+INSERT INTO `top10games` VALUES (10, 'a8a747fd-c5c3-49d4-ba65-6cea329b977d', 6, 1);
+INSERT INTO `top10games` VALUES (11, '92d66d1f-1237-41b4-8dc6-25a581e4d14f', 6, 1);
+INSERT INTO `top10games` VALUES (12, '4a2a3240-4f87-4835-bfd6-2096978abbb2', 7, 1);
+INSERT INTO `top10games` VALUES (13, '66de123b-2a1b-4b99-b78e-0b95a109dd9b', 8, 1);
+INSERT INTO `top10games` VALUES (14, 'abc636e2-be01-43c4-9fe2-bc59ea0ca3ab', 9, 1);
+INSERT INTO `top10games` VALUES (15, 'fffdb5e7-1af6-4c8f-85fe-66f510250f6a', 1, 1);
+INSERT INTO `top10games` VALUES (18, 'ce1e976e-3c67-4d31-80e0-9ba1c5e0c223', 10, 1);
+INSERT INTO `top10games` VALUES (19, '7d45769b-393d-4a09-9870-76f83ef94669', 1, 1);
+INSERT INTO `top10games` VALUES (23, '50a01c39-5efb-41fc-9101-d8b2fc166e7d', 4, 1);
 
 -- ----------------------------
--- Table structure for top10nonactiongames
+-- Table structure for top10name
 -- ----------------------------
-DROP TABLE IF EXISTS `top10nonactiongames`;
-CREATE TABLE `top10nonactiongames`  (
-  `id` int NOT NULL,
-  `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `pos` int NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `top10_game`(`gameid`) USING BTREE,
-  CONSTRAINT `top10nonactiongames_ibfk_1` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+DROP TABLE IF EXISTS `top10name`;
+CREATE TABLE `top10name`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of top10nonactiongames
+-- Records of top10name
 -- ----------------------------
-
--- ----------------------------
--- Table structure for top10rpg
--- ----------------------------
-DROP TABLE IF EXISTS `top10rpg`;
-CREATE TABLE `top10rpg`  (
-  `id` int NOT NULL,
-  `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `pos` int NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `top10_game`(`gameid`) USING BTREE,
-  CONSTRAINT `top10rpg_ibfk_1` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of top10rpg
--- ----------------------------
-
--- ----------------------------
--- Table structure for top10turnbasedgames
--- ----------------------------
-DROP TABLE IF EXISTS `top10turnbasedgames`;
-CREATE TABLE `top10turnbasedgames`  (
-  `id` int NOT NULL,
-  `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `pos` int NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `top10_game`(`gameid`) USING BTREE,
-  CONSTRAINT `top10turnbasedgames_ibfk_1` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of top10turnbasedgames
--- ----------------------------
+INSERT INTO `top10name` VALUES (1, 'All Time');
 
 SET FOREIGN_KEY_CHECKS = 1;

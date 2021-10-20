@@ -12,6 +12,9 @@ namespace DRG_Api.Services
             Statuses = new StatusRepository(_context);
             Platforms = new PlatformRepository(_context);
             Top10Games = new Top10GamesRepository(_context);
+            Top10Names = new Top10NameRepository(_context);
+            Characters = new CharacterRepository(_context);
+            Top10Characters = new Top10CharactersRepository(_context);
 
         }
 
@@ -19,6 +22,9 @@ namespace DRG_Api.Services
         public IStatusRepository Statuses { get; private set; }
         public IPlatformRepository Platforms { get; private set; }
         public ITop10GamesRepository Top10Games { get; private set; }
+        public ITop10NameRepository Top10Names { get; private set; }
+        public ICharacterRepository Characters { get; private set; }
+        public ITop10CharactersRepository Top10Characters { get; private set; }
         public int Save()
         {
             return _context.SaveChanges();

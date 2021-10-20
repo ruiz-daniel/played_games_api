@@ -14,6 +14,9 @@ namespace DRG_Api.Contexts
         public DbSet<Platform> platform { get; set; }
         public DbSet<Status> status { get; set; }
         public DbSet<Top10Game> top10games { get; set; }
+        public DbSet<Top10Name> top10name { get; set; }
+        public DbSet<Character> character { get; set; }
+        public DbSet<Top10Character> top10characters { get; set; }
 
     }
 }

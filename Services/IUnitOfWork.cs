@@ -8,6 +8,9 @@ namespace DRG_Api.Services
         public IStatusRepository Statuses { get; }
         public IPlatformRepository Platforms { get; }
         public ITop10GamesRepository Top10Games { get; }
+        public ITop10NameRepository Top10Names { get; }
+        public ICharacterRepository Characters { get; }
+        public ITop10CharactersRepository Top10Characters { get; }
         int Save();
     }
 }

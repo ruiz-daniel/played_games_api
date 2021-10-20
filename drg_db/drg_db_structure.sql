@@ -11,20 +11,24 @@
  Target Server Version : 80025
  File Encoding         : 65001
 
- Date: 22/07/2021 10:20:12
+ Date: 07/08/2021 16:16:23
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for __efmigrationshistory
+-- Table structure for character
 -- ----------------------------
-DROP TABLE IF EXISTS `__efmigrationshistory`;
-CREATE TABLE `__efmigrationshistory`  (
-  `MigrationId` varchar(95) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `ProductVersion` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`MigrationId`) USING BTREE
+DROP TABLE IF EXISTS `character`;
+CREATE TABLE `character`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `wikia_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `favorite` tinyint(1) NULL DEFAULT 0,
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -35,7 +39,7 @@ CREATE TABLE `platform`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for playedgame
@@ -67,19 +71,22 @@ CREATE TABLE `status`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for top10actiongames
+-- Table structure for top10characters
 -- ----------------------------
-DROP TABLE IF EXISTS `top10actiongames`;
-CREATE TABLE `top10actiongames`  (
-  `id` int NOT NULL,
-  `game_fk` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+DROP TABLE IF EXISTS `top10characters`;
+CREATE TABLE `top10characters`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `characterid` int NOT NULL,
   `pos` int NOT NULL,
+  `top10nameid` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `top10_game`(`game_fk`) USING BTREE,
-  CONSTRAINT `top10actiongames_ibfk_1` FOREIGN KEY (`game_fk`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  INDEX `characterid`(`characterid`) USING BTREE,
+  INDEX `top10nameid`(`top10nameid`) USING BTREE,
+  CONSTRAINT `top10characters_ibfk_1` FOREIGN KEY (`characterid`) REFERENCES `character` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `top10characters_ibfk_2` FOREIGN KEY (`top10nameid`) REFERENCES `top10name` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -90,48 +97,22 @@ CREATE TABLE `top10games`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `pos` int NOT NULL,
+  `top10nameid` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `FK_top10games_playedgame_game_fk`(`gameid`) USING BTREE,
-  CONSTRAINT `top10_game` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+  INDEX `top10_name`(`top10nameid`) USING BTREE,
+  CONSTRAINT `top10_game` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `top10_name` FOREIGN KEY (`top10nameid`) REFERENCES `top10name` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for top10nonactiongames
+-- Table structure for top10name
 -- ----------------------------
-DROP TABLE IF EXISTS `top10nonactiongames`;
-CREATE TABLE `top10nonactiongames`  (
-  `id` int NOT NULL,
-  `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `pos` int NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `top10_game`(`gameid`) USING BTREE,
-  CONSTRAINT `top10nonactiongames_ibfk_1` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Table structure for top10rpg
--- ----------------------------
-DROP TABLE IF EXISTS `top10rpg`;
-CREATE TABLE `top10rpg`  (
-  `id` int NOT NULL,
-  `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `pos` int NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `top10_game`(`gameid`) USING BTREE,
-  CONSTRAINT `top10rpg_ibfk_1` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Table structure for top10turnbasedgames
--- ----------------------------
-DROP TABLE IF EXISTS `top10turnbasedgames`;
-CREATE TABLE `top10turnbasedgames`  (
-  `id` int NOT NULL,
-  `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `pos` int NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `top10_game`(`gameid`) USING BTREE,
-  CONSTRAINT `top10turnbasedgames_ibfk_1` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+DROP TABLE IF EXISTS `top10name`;
+CREATE TABLE `top10name`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
