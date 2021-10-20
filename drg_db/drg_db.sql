@@ -11,7 +11,7 @@
  Target Server Version : 80025
  File Encoding         : 65001
 
- Date: 07/08/2021 16:16:15
+ Date: 20/10/2021 19:30:11
 */
 
 SET NAMES utf8mb4;
@@ -27,13 +27,16 @@ CREATE TABLE `character`  (
   `gameid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `wikia_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `favorite` tinyint(1) NULL DEFAULT 0,
+  `favorite` tinyint(1) NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of character
 -- ----------------------------
+INSERT INTO `character` VALUES (1, '2B', '1649133e-d70c-4156-aeac-21da070633b4', 'string', 'https://localhost:5001/game_images/YoRHa_No.2_Type_B.png', 1);
+INSERT INTO `character` VALUES (2, 'Kainé', 'fffdb5e7-1af6-4c8f-85fe-66f510250f6a', 'https://nier.fandom.com/wiki/Kain%C3%A9', 'https://localhost:5001/game_images/Kaine.jpg', 0);
+INSERT INTO `character` VALUES (3, 'Bayonetta / Cereza', '97f3de86-4cbe-4061-adab-156af2bd2b81', 'https://bayonetta.fandom.com/wiki/Bayonetta_(character)', 'https://localhost:5001/game_images/Bayonetta character.png', 0);
 
 -- ----------------------------
 -- Table structure for platform
@@ -43,7 +46,7 @@ CREATE TABLE `platform`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of platform
@@ -61,6 +64,8 @@ INSERT INTO `platform` VALUES (10, 'Nintendo WiiU');
 INSERT INTO `platform` VALUES (11, 'Nintendo Switch');
 INSERT INTO `platform` VALUES (12, 'PSP');
 INSERT INTO `platform` VALUES (13, 'Nintendo Wii');
+INSERT INTO `platform` VALUES (14, 'Android');
+INSERT INTO `platform` VALUES (15, 'Other');
 
 -- ----------------------------
 -- Table structure for playedgame
@@ -92,6 +97,7 @@ INSERT INTO `playedgame` VALUES ('02ef03d4-bb30-4f4b-8031-fe42e5f10238', 'Call o
 INSERT INTO `playedgame` VALUES ('0406bb3e-3685-4a36-bccd-9c5b7bd5bfe3', 'Bleach 3rd Phantom', '2008', 'SEGA, Torn Create', 'SEGA', 'Tactical RPG', 8, 8, 1, 'https://localhost:5001/game_images/Bleach 3rd Phantom.jpg');
 INSERT INTO `playedgame` VALUES ('050bb88f-ef91-4952-9f5f-3ab50dafffd4', 'FAR Lone Sails', '2018', 'Okomotive', 'Mixtivision', '2D Adventure', 9, 1, 1, 'https://localhost:5001/game_images/FAR Lone Sails.jpg');
 INSERT INTO `playedgame` VALUES ('057a7ba9-2cd3-4842-93ac-b06325cc76fd', 'Horizon Zero Dawn', '2017', 'Guerilla Games', 'Sony', 'Action Adventure', 9, 1, 1, 'https://localhost:5001/game_images/Horizon Zero Dawn.jpg');
+INSERT INTO `playedgame` VALUES ('076408e8-1cdd-4da6-9d63-f207def2330f', 'Nier Re[in]carnation', '2021', 'Applibot', 'Square Enix', 'JRPG / gacha', 5, 14, 4, 'https://localhost:5001/game_images/Nier Reincarnation.jpg');
 INSERT INTO `playedgame` VALUES ('07ae0a58-321b-4f0d-bb67-e1a61e00bb43', 'Darksiders 2', '2012', 'Virgil Games', 'THQ', 'Hack\'n Slash', 7, 1, 5, 'https://localhost:5001/game_images/Darksiders 2.jpg');
 INSERT INTO `playedgame` VALUES ('085cfd42-28cb-488b-8b46-d8b3757154b4', 'The King of Fighters 98', '1998', 'SNK', 'SNK', 'Fighting', 8, 2, 2, 'https://localhost:5001/game_images/The King of Fighters 98.jpg');
 INSERT INTO `playedgame` VALUES ('08cb1b15-2ddd-4a43-b023-8d38b76a5797', 'Kirby Mass Attack', '2011', 'HAL Laboratory', 'Nintendo', 'Platform Action Adventure', 8, 8, 1, 'https://localhost:5001/game_images/Kirby Mass Attack.jpg');
@@ -105,21 +111,24 @@ INSERT INTO `playedgame` VALUES ('0faaf5d2-38d9-4aca-a7d0-1cda1b50c1fb', 'Contro
 INSERT INTO `playedgame` VALUES ('1009f5f0-0e12-45b7-ba68-19ced577bd3c', 'Trauma Center Under The Knife 2', '2008', 'ATLUS', 'ATLUS', 'Puzzle', 9, 8, 5, 'https://localhost:5001/game_images/Trauma Center Under The Knife 2.jpg');
 INSERT INTO `playedgame` VALUES ('119f51c3-dc36-4295-9cdf-e1c6984af4e1', 'Fire Emblem Awakening', '2012', 'Intelligent Systems', 'Nintendo', 'Tactical JRPG', 8, 9, 1, 'https://localhost:5001/game_images/Fire Emblem Awakening.jpg');
 INSERT INTO `playedgame` VALUES ('1649133e-d70c-4156-aeac-21da070633b4', 'Nier Automata', '2017', 'Platinum Games', 'Square Enix', 'Action JRPG', 10, 1, 1, 'https://localhost:5001/game_images/Nier Automata.jpg');
+INSERT INTO `playedgame` VALUES ('179d4336-48af-40a8-b1ff-a85a0ec1ee67', 'Astria Ascending', '2021', 'Artisan Studios', ' Dear Villagers, Maple Whispering Limited', 'JRPG', 8, 1, 3, 'https://localhost:5001/game_images/Astria Ascending.jfif');
 INSERT INTO `playedgame` VALUES ('184d54e2-ba0d-42b8-8b96-3381fd5e8424', 'Disco Elyssium', '2019', 'ZA/UM', 'ZA/UM', 'Point & Click RPG', 9, 1, 5, 'https://localhost:5001/game_images/Disco Elyssium.jpg');
-INSERT INTO `playedgame` VALUES ('1aec268c-11ae-4f40-9d5b-049d700ab000', 'Nioh 2', '2020', 'Team Ninja', 'Koei Tecmo', 'Action RPG / Soulslike', 9, 1, 3, 'https://localhost:5001/game_images/Nioh 2.jpg');
+INSERT INTO `playedgame` VALUES ('1aec268c-11ae-4f40-9d5b-049d700ab000', 'Nioh 2', '2020', 'Team Ninja', 'Koei Tecmo', 'Action RPG / Soulslike', 9, 1, 4, 'https://localhost:5001/game_images/Nioh 2.jpg');
 INSERT INTO `playedgame` VALUES ('1afcad55-427d-4323-a81c-2cf5335a2e7a', 'Driver 2', '2000', 'Ubisoft Reflections', 'Infogrames', 'Open World Driving', 6, 2, 2, 'https://localhost:5001/game_images/Driver 2.jpg');
-INSERT INTO `playedgame` VALUES ('1d2f7fff-a6b8-4dcf-93be-765dbde1e0b8', 'Guilty Gear Strive', '2021', 'Arc System Works', 'Arc System Works, Bandai Namco', 'Fighting', 8, 1, 3, 'https://localhost:5001/game_images/Guilty Gear Strive.jpg');
+INSERT INTO `playedgame` VALUES ('1d2f7fff-a6b8-4dcf-93be-765dbde1e0b8', 'Guilty Gear Strive', '2021', 'Arc System Works', 'Arc System Works, Bandai Namco', 'Fighting', 8, 1, 2, 'https://localhost:5001/game_images/Guilty Gear Strive.jpg');
 INSERT INTO `playedgame` VALUES ('1e139545-589c-420a-8472-38e635ce5adc', 'Bound By Flame', '2014', 'Spiders', 'Focus Home Interactive', 'Action RPG', 5, 1, 1, 'https://localhost:5001/game_images/Bound By Flame.jpg');
+INSERT INTO `playedgame` VALUES ('1f79a422-a786-4703-a14e-0e065706cde4', 'Atelier Ryza 2 Lost Legends & The Secret Fairy', '2021', 'Gust Co. Ltd.', 'Koei Tecmo', 'JRPG', 6, 1, 4, 'https://localhost:5001/game_images/Atelier Ryza 2 Lost Legends & The Secret Fairy.jpg');
 INSERT INTO `playedgame` VALUES ('1fac65d0-4b6a-4742-8924-2826dc6befe0', 'Sacred 3', '2014', 'Keen Games', 'Deep Silver', 'Isometric Action', 5, 1, 5, 'https://localhost:5001/game_images/Sacred 3.jpg');
 INSERT INTO `playedgame` VALUES ('1fd77937-6279-42dc-9009-2d7ad489f265', 'Cuphead', '2017', 'Studio MDHR', 'Studio MDHR', 'Platform Action', 8, 1, 5, 'https://localhost:5001/game_images/Cuphead.jpg');
 INSERT INTO `playedgame` VALUES ('22a706be-5557-48a6-bd75-2b151a47ca78', 'Blur', '2010', 'Bizarre Creation', 'Activision', 'Racing', 6, 1, 2, 'https://localhost:5001/game_images/Blur.jpg');
 INSERT INTO `playedgame` VALUES ('23ffb351-4ae1-461d-8d6e-1a652762ec05', 'Mass Effect', '2007', 'Bioware', 'Electronic Arts', '3rd Person Shooter RPG', 9, 1, 1, 'https://localhost:5001/game_images/Mass Effect.jpg');
 INSERT INTO `playedgame` VALUES ('254f3c33-aa28-4294-904f-e10d84882d85', 'Digimon World Dusk', '2007', 'Bandai', 'Bandai', 'JRPG', 7, 8, 1, 'https://localhost:5001/game_images/Digimon World Dusk.jpg');
 INSERT INTO `playedgame` VALUES ('257f011f-b597-4d65-bc38-995aebe255d9', 'YuGiOh 5DS World Championship 2009', '2009', 'Konami', 'Konami', 'Cards', 9, 8, 1, 'https://localhost:5001/game_images/YuGiOh 5DS World Championship 2009.jpg');
+INSERT INTO `playedgame` VALUES ('25c4e179-d1fc-43db-9fa2-47f8a7d1cfef', 'Hob', '2017', 'Runic Games', 'Runic games', 'Action Adventure', 6, 1, 5, 'https://localhost:5001/game_images/Hob.jfif');
 INSERT INTO `playedgame` VALUES ('268df007-2d33-46a0-9d62-dd198676add8', 'Steam World Dig', '2013', 'Image & Form', 'Image and Form', 'Sandbox Platform', 8, 1, 1, 'https://localhost:5001/game_images/Steam World Dig.jpg');
 INSERT INTO `playedgame` VALUES ('27826b7a-d126-43d1-8712-c9d6721051a2', 'Sacred', '2004', 'Ascaron', 'Take Two, Deep Silver', 'ARPG isometric', 7, 1, 1, 'https://localhost:5001/game_images/Sacred.jpg');
 INSERT INTO `playedgame` VALUES ('285132a4-375d-4978-a68c-b7e72c0b6e4b', 'Mass Effect 3', '2012', 'Bioware', 'Electronic Arts', '3rd Person Shooter RPG', 10, 1, 1, 'https://localhost:5001/game_images/Mass Effect 3.jpg');
-INSERT INTO `playedgame` VALUES ('28b8dc74-1607-42f3-a79f-ff50b1d96b1b', 'Final Fantasy 3', '1992', 'Square Enix', 'Square Enix', 'JRPG', 6, 12, 5, 'https://localhost:5001/game_images/Final Fantasy 3.jpg');
+INSERT INTO `playedgame` VALUES ('28b8dc74-1607-42f3-a79f-ff50b1d96b1b', 'Final Fantasy III 3D Remake', '2012', 'Square Enix', 'Square Enix', 'JRPG', 6, 12, 5, 'https://localhost:5001/game_images/Final Fantasy 3.jpg');
 INSERT INTO `playedgame` VALUES ('294128b4-128f-4c0c-b85b-fe70dc552ffe', 'The Witness', '2016', 'Thekla Inc.', 'Thekla Inc.', 'Puzzle', 8, 1, 5, 'https://localhost:5001/game_images/The Witness.jpg');
 INSERT INTO `playedgame` VALUES ('2b8936b8-7a6f-4645-833e-385f70da7afd', 'Greedfall', '2019', 'Spiders', 'Focus Home Interactive', 'Action RPG', 5, 1, 5, 'https://localhost:5001/game_images/Greedfall.jpg');
 INSERT INTO `playedgame` VALUES ('2cc42cbd-e56a-4214-b106-bc403c33bd77', 'DMC Devil May Cry', '2013', 'Ninja Theory', 'CAPCOM', 'Hack\'n Slash', 6, 1, 1, 'https://localhost:5001/game_images/DMC Devil May Cry.jpg');
@@ -131,10 +140,11 @@ INSERT INTO `playedgame` VALUES ('32eb197b-3e08-44c9-9a18-620f59903da8', 'Call o
 INSERT INTO `playedgame` VALUES ('33a11b04-6a29-4df0-94e4-e391ca4d7979', 'Middle-Earth Shadow of Mordor', '2014', 'Monolith Studios', 'Warner Bros Interactive', 'Open World Action Adventure', 6, 1, 1, 'https://localhost:5001/game_images/Middle-Earth Shadow of Mordor.jpg');
 INSERT INTO `playedgame` VALUES ('33daa5b6-16c5-4876-8388-bd6e7e4e196a', 'Grand Theft Auto V', '2015', 'Rockstar North', 'Rockstar Games', 'Open World 3rd Person Shooter', 8, 1, 1, 'https://localhost:5001/game_images/Grand Theft Auto V.jpg');
 INSERT INTO `playedgame` VALUES ('356ac0f1-6859-4a00-a62a-9ca87530e3af', 'Bully', '2006', 'Rockstar Vancouver', 'Rockstar Games', 'Open World Action', 5, 1, 5, 'https://localhost:5001/game_images/Bully.jpg');
-INSERT INTO `playedgame` VALUES ('387b0d2e-1b09-47d4-86ac-cebf8c6dde12', 'Naruto Shippuden Ultimate Ninja Storm 3', '2013', 'CyberConect 2', 'Bandai Namco', 'Arena Fighter', 8, 1, 1, 'https://localhost:5001/game_images/Naruto Shippuden Ultimate Ninja Storm 3.jpg');
+INSERT INTO `playedgame` VALUES ('387b0d2e-1b09-47d4-86ac-cebf8c6dde12', 'Naruto Shippuden Ultimate Ninja Storm 3', '2013', 'CyberConect 2', 'Bandai Namco', 'Arena Fighter', 7, 1, 1, 'https://localhost:5001/game_images/Naruto Shippuden Ultimate Ninja Storm 3.jpg');
 INSERT INTO `playedgame` VALUES ('38c23499-1351-4a94-a194-0b9cc1a0bc4c', 'Astral Chain', '2019', 'Platinum Games', 'Nintendo', 'Hack\'n Slash', 9, 11, 1, 'https://localhost:5001/game_images/Astral Chain.jpg');
 INSERT INTO `playedgame` VALUES ('3db0e11d-4b3a-4d99-ae2e-d690792ad70e', 'Naruto Ultimate Ninja Storm', '2008', 'CyberConect 2', 'Bandai Namco', 'Arena Fighter', 5, 1, 5, 'https://localhost:5001/game_images/Naruto Ultimate Ninja Storm.jpg');
 INSERT INTO `playedgame` VALUES ('3ddf4ba9-b77f-48d6-93e9-d26b33ed8a36', 'FIFA 19', '2018', 'EA Sports', 'Electronic Arts', 'Sports / Football', 7, 1, 2, 'https://localhost:5001/game_images/FIFA 19.jpg');
+INSERT INTO `playedgame` VALUES ('3e899ee2-808f-4e46-92f6-d3cbd534bc29', 'Final Fantasy 1 & 2 Dawn of Souls', '2004', 'Square Enix', 'Nintendo', 'JRPG', 4, 7, 5, 'https://localhost:5001/game_images/Final Fantasy 1&2 Dawn of Souls.jfif');
 INSERT INTO `playedgame` VALUES ('3ea3976e-46b9-41e4-b680-af47d682533c', 'Twisted Metal 2', '1996', 'SingleTrac', 'Sony', 'Vehicle Combat', 7, 2, 2, 'https://localhost:5001/game_images/Twisted Metal 2.jpg');
 INSERT INTO `playedgame` VALUES ('3f1870e6-629f-46d5-bbd6-1e7415deef1f', 'Hades', '2020', 'Supergiant Games', 'Supergiant Games', 'Rogue-Like', 9, 1, 4, 'https://localhost:5001/game_images/Hades.jpg');
 INSERT INTO `playedgame` VALUES ('3f50984c-fc7f-492c-8200-2039423d81a8', 'Final Fantasy XV', '2018', 'Square Enix', 'Square Enix', 'Action JRPG', 6, 1, 1, 'https://localhost:5001/game_images/Final Fantasy XV.jpg');
@@ -168,7 +178,9 @@ INSERT INTO `playedgame` VALUES ('5921e706-f7c0-49b0-b1c7-3b6ae8cb9e0f', 'Funbag
 INSERT INTO `playedgame` VALUES ('595a84ac-860b-4ae2-baaf-74d1892c7bc4', 'The Legend of Zelda Breath of the Wild', '2017', 'Nintendo', 'Nintendo', 'Open World Action Adventure', 8, 10, 5, 'https://localhost:5001/game_images/The Legend of Zelda Breath of the Wild.jpg');
 INSERT INTO `playedgame` VALUES ('5c12bf90-9019-4511-83a6-efd5955efdc5', 'Lords of The Fallen', '2015', 'CI Games, Deck 13', 'CI Games, Bandai Namco', 'Action / Soulslike', 5, 1, 5, 'https://localhost:5001/game_images/Lords of The Fallen.jpg');
 INSERT INTO `playedgame` VALUES ('5e8da665-5ef2-4f7d-b26b-307f59d3a1dd', 'A Rose in the Twilight', '2017', 'Nippon Ichi Software', 'NIS America', '2D Puzzle', 6, 1, 5, 'https://localhost:5001/game_images/A Rose in the Twilight.jpg');
+INSERT INTO `playedgame` VALUES ('6019d098-b859-4e03-908f-0a24497e2fff', 'TERA', '2011', 'Krafton', 'Ubisoft, Gameforge Berlin', 'MMORPG', 5, 1, 2, 'https://localhost:5001/game_images/TERA.jpg');
 INSERT INTO `playedgame` VALUES ('61018dd1-2f6b-499e-9a5a-2802794d609b', 'Doki Doki Literature Club', '2017', 'Team Salvato', 'Team Salvato', 'Visual Novel', 3, 1, 1, 'https://localhost:5001/game_images/Doki Doki Literature Club.jpg');
+INSERT INTO `playedgame` VALUES ('6305e87a-4ecd-437c-b70f-d8dfa4a5c0f8', 'Warframe', '2013', 'Digital Extremes', 'Digital Extremes', 'MMO Action RPG', 7, 1, 2, 'https://localhost:5001/game_images/Warframe.jpg');
 INSERT INTO `playedgame` VALUES ('64bb12c1-06eb-4c35-a51b-87e5c3325fb5', 'Guitar Hero III Legends of Rock', '2007', 'Aspyr Media', 'Activision, RedOctane', 'Rhythm', 9, 1, 1, 'https://localhost:5001/game_images/Guitar Hero III Legends of Rock.jpg');
 INSERT INTO `playedgame` VALUES ('653068ab-bf07-4537-9f7e-295345d301cc', 'YuGiOh GX Spirit Caller', '2007', 'Konami', 'Konami', 'Cards', 9, 8, 1, 'https://localhost:5001/game_images/YuGiOh GX Spirit Caller.jpg');
 INSERT INTO `playedgame` VALUES ('66de123b-2a1b-4b99-b78e-0b95a109dd9b', 'Grand Theft Auto San Andreas', '2004', 'Rockstar North', 'Rockstar Games', 'Open World 3rd Person Shooter', 10, 1, 1, 'https://localhost:5001/game_images/Grand Theft Auto San Andreas.jpg');
@@ -181,7 +193,8 @@ INSERT INTO `playedgame` VALUES ('710706ac-8216-450b-987c-a0ed06dc7d0c', 'The Wi
 INSERT INTO `playedgame` VALUES ('71224041-c215-42f4-861d-c3fcf80960ff', 'Mass Effect 2', '2010', 'Bioware', 'Electronic Arts', '3rd Person Shooter RPG', 10, 1, 1, 'https://localhost:5001/game_images/Mass Effect 2.jpg');
 INSERT INTO `playedgame` VALUES ('73c3228a-443c-4dfb-929d-ecb322a89398', 'Watchdogs', '2014', 'Ubisoft', 'Ubisoft', 'Open World 3rd Person Shooter', 4, 1, 5, 'https://localhost:5001/game_images/Watchdogs.jpg');
 INSERT INTO `playedgame` VALUES ('73c417df-869b-42e0-be66-3f9bd3d662bf', 'Tekken 3', '1997', 'Namco', 'Namco', 'Fighting', 9, 2, 2, 'https://localhost:5001/game_images/Tekken 3.jpg');
-INSERT INTO `playedgame` VALUES ('7941a25c-cd84-44e1-bf9f-64a0581ff91a', 'Psycho Pass Mandatory Happiness', '2015', '5pb', 'Nippon Ichi Software, NIS America', 'Visual Novel', 7, 1, 1, 'https://localhost:5001/game_images/Psycho Pass Mandatory Happiness.jpg');
+INSERT INTO `playedgame` VALUES ('7941a25c-cd84-44e1-bf9f-64a0581ff91a', 'Psycho Pass Mandatory Happiness', '2015', '5pb', 'Nippon Ichi Software, NIS America', 'Visual Novel', 6, 1, 1, 'https://localhost:5001/game_images/Psycho Pass Mandatory Happiness.jpg');
+INSERT INTO `playedgame` VALUES ('7b3911f4-31ee-484d-ac6e-4c82d25c85ec', 'Infinity Wars', '2014', 'Lightmare Studios', 'Lightmare Studios, Yodo1 Games', 'Card Game', 6, 1, 2, 'https://localhost:5001/game_images/Infinity Wars.jpg');
 INSERT INTO `playedgame` VALUES ('7d45769b-393d-4a09-9870-76f83ef94669', 'Nier', '2010', 'Cavia', 'Square Enix', 'Action JRPG', 9, 4, 1, 'https://localhost:5001/game_images/Nier.jpg');
 INSERT INTO `playedgame` VALUES ('8130c922-7d3d-4be2-a3cb-d876a871c194', 'Guilty Gear XX Accent Core +R', '2013', 'Arc System Works', 'Arc System Works', 'Fighting', 8, 1, 2, 'https://localhost:5001/game_images/Guilty Gear XX Accent Core +R.jpg');
 INSERT INTO `playedgame` VALUES ('82bcb704-767e-4a1e-b19d-9d1af2504d47', 'Pokémon Sapphire', '2002', 'Gamefreak', 'Nintendo', 'JRPG', 6, 7, 1, 'https://localhost:5001/game_images/Pokémon Sapphire.jpg');
@@ -201,10 +214,11 @@ INSERT INTO `playedgame` VALUES ('8d243f39-a163-4040-b1e7-121f84fcad75', 'Super 
 INSERT INTO `playedgame` VALUES ('8e324497-0ca4-4473-959c-ba3d7a4111e8', 'Quake 3 Arena', '1999', 'id Software', 'Activision', '1st Person Shooter', 8, 1, 2, 'https://localhost:5001/game_images/Quake 3 Arena.jpg');
 INSERT INTO `playedgame` VALUES ('8f714a92-4f02-427a-8fb4-7ed69c8df3f7', 'Metal Slug 2', '1998', 'SNK', 'SNK', 'Side Scrolling Shooter', 8, 2, 1, 'https://localhost:5001/game_images/Metal Slug 2.jpg');
 INSERT INTO `playedgame` VALUES ('90417cba-7d5d-4c57-9d3d-c72801661a7d', 'Street Fighters V', '2016', 'CAPCOM', 'CAPCOM', 'Fighting', 7, 1, 2, 'https://localhost:5001/game_images/Street Fighters V.jpg');
+INSERT INTO `playedgame` VALUES ('91884832-d461-47dc-bcde-d9a9887f5fcc', 'Final Fantasy Pixel Remaster', '2021', 'Square Enix', 'Square Enix', 'JRPG', 6, 1, 1, 'https://localhost:5001/game_images/Final Fantasy Pixel Remaster.jfif');
 INSERT INTO `playedgame` VALUES ('92361edd-cf5e-4fb7-bb58-e336385f53d8', 'Devil May Cry V', '2019', 'CAPCOM', 'CAPCOM', 'Hack\'n Slash', 6, 1, 5, 'https://localhost:5001/game_images/Devil May Cry V.jpg');
 INSERT INTO `playedgame` VALUES ('9280d41d-0230-4546-8e00-3e4894423ed6', 'Bleach The Blade of Fate', '2006', 'Treasure Co. Ltd', 'SEGA', 'Fighting', 6, 8, 1, 'https://localhost:5001/game_images/Bleach The Blade of Fate.jpg');
 INSERT INTO `playedgame` VALUES ('92d66d1f-1237-41b4-8dc6-25a581e4d14f', 'Persona 5 Strikers', '2021', 'ATLUS, Koei Tecmo', 'SEGA', 'Musou', 10, 1, 1, 'https://localhost:5001/game_images/Persona 5 Strikers.jpg');
-INSERT INTO `playedgame` VALUES ('92f0b197-40f3-4545-87ff-0835b4696a1f', 'Soulcalibur VI', '2018', 'Bandai Namco', 'Bandai Namco', 'Fighting', 7, 1, 2, 'https://localhost:5001/game_images/Soulcalibur VI.jpg');
+INSERT INTO `playedgame` VALUES ('92f0b197-40f3-4545-87ff-0835b4696a1f', 'Soulcalibur VI', '2018', 'Bandai Namco', 'Bandai Namco', 'Fighting', 8, 1, 2, 'https://localhost:5001/game_images/Soulcalibur VI.jpg');
 INSERT INTO `playedgame` VALUES ('93319e3e-6fde-4858-867d-3a176631cb50', 'Bloody Roar 2', '1999', '8ing/Raizing, Hudson Soft', 'Hudson Soft, Sony, Virgin', 'Fighting', 7, 2, 2, 'https://localhost:5001/game_images/Bloody Roar 2.jpg');
 INSERT INTO `playedgame` VALUES ('93cdc5b2-049c-44bc-acaf-8c006103cf34', 'Avatar The Last Airbender Into the Inferno', '2008', 'THQ', 'THQ', 'Action Adventure', 5, 8, 5, 'https://localhost:5001/game_images/Avatar The Last Airbender Into the Inferno.jpg');
 INSERT INTO `playedgame` VALUES ('93d7388d-0438-488f-8d34-993369a79d7b', 'Ninja Gaiden Sigma', '2007', 'Team Ninja', 'Koei Tecmo', 'Hack\'n Slash', 5, 1, 5, 'https://localhost:5001/game_images/Ninja Gaiden Sigma.jpg');
@@ -221,13 +235,14 @@ INSERT INTO `playedgame` VALUES ('9d10443c-bc2e-4f2d-a7af-3cf47b752f52', 'Pokém
 INSERT INTO `playedgame` VALUES ('9e481a65-e865-43aa-bc61-0a62b6e77577', 'Metal Slug', '1996', 'SNK', 'SNK', 'Side Scrolling Shooter', 8, 2, 1, 'https://localhost:5001/game_images/Metal Slug.jpg');
 INSERT INTO `playedgame` VALUES ('9e675dfa-11cf-4992-95a4-7ba00ef040a0', 'Virtua Tennis 4', '2011', 'SEGA', 'SEGA', 'Sports/Tennis', 9, 1, 2, 'https://localhost:5001/game_images/Virtua Tennis 4.jpg');
 INSERT INTO `playedgame` VALUES ('9f19f6fb-7c22-4551-80a4-419722cb691e', 'Shin Megami Tensei Devil Survivor 2', '2011', 'ATLUS, Career Soft', 'ATLUS, Nintendo', 'Tactical RPG', 6, 8, 5, 'https://localhost:5001/game_images/Shin Megami Tensei Devil Survivor 2.jpg');
-INSERT INTO `playedgame` VALUES ('a04d557f-9b08-4dbd-9099-95a53612fbd5', 'Final Fantasy', '1990', 'Square Enix', 'Square Enix', 'JRPG', 6, 7, 5, 'https://localhost:5001/game_images/Final Fantasy.jpg');
+INSERT INTO `playedgame` VALUES ('a11004c5-64a1-49fd-8850-d2c119e42e19', 'Hot Wheels Unleashed', '2021', 'Milestone S.r.l.', 'Milestone S.r.l.', 'Racing', 4, 1, 5, 'https://localhost:5001/game_images/hot-wheels-unleashed.jpg');
 INSERT INTO `playedgame` VALUES ('a1d17721-0c5d-4048-92c3-b040c8e96026', 'Watchdogs 2', '2016', 'Ubisoft', 'Ubisoft', 'Open World 3rd Person Shooter', 6, 1, 5, 'https://localhost:5001/game_images/Watchdogs 2.jpg');
-INSERT INTO `playedgame` VALUES ('a3c6f417-6b44-4cdd-a6ed-eb8f78546864', 'Naruto Shippuden Ultimate Ninja Storm 4', '2016', 'CyberConect 2', 'Bandai Namco', 'Arena Fighter', 8, 1, 1, 'https://localhost:5001/game_images/Naruto Shippuden Ultimate Ninja Storm 4.jpg');
+INSERT INTO `playedgame` VALUES ('a3c6f417-6b44-4cdd-a6ed-eb8f78546864', 'Naruto Shippuden Ultimate Ninja Storm 4', '2016', 'CyberConect 2', 'Bandai Namco', 'Arena Fighter', 7, 1, 1, 'https://localhost:5001/game_images/Naruto Shippuden Ultimate Ninja Storm 4.jpg');
 INSERT INTO `playedgame` VALUES ('a736232d-b5b0-4743-ab26-d347b766b983', 'Ninja Blade', '2009', 'From Software', 'Microsoft', 'Hack\'n Slash', 7, 1, 5, 'https://localhost:5001/game_images/Ninja Blade.jpg');
 INSERT INTO `playedgame` VALUES ('a76d1174-c87e-495b-90b6-646864648d97', 'Medal of Honor Warfighter', '2012', 'EA Los Angeles', 'Electronic Arts', 'First Person Shooter', 5, 1, 1, 'https://localhost:5001/game_images/Medal of Honor Warfighter.jpg');
 INSERT INTO `playedgame` VALUES ('a76f1735-3f19-4c57-9a97-f87eb8bd2e0b', 'Oninaki', '2019', 'Tokyo RPG Factory', 'Square Enix', 'Action JRPG', 7, 1, 1, 'https://localhost:5001/game_images/Oninaki.jpg');
-INSERT INTO `playedgame` VALUES ('a8a747fd-c5c3-49d4-ba65-6cea329b977d', 'Persona 5', '2017', 'ATLUS', 'ATLUS', 'JRPG / Visual Novel', 9, 4, 1, 'https://localhost:5001/game_images/Persona 5.jpg');
+INSERT INTO `playedgame` VALUES ('a87dd48e-3b64-48cd-87fc-a679bf9ce9dc', 'Final Fantasy 3 Pixel Remaster', '2021', 'Square Enix', 'Square Enix', 'JRPG', 7, 1, 1, 'https://localhost:5001/game_images/Final Fantasy 3 Pixel Remaster.jpg');
+INSERT INTO `playedgame` VALUES ('a8a747fd-c5c3-49d4-ba65-6cea329b977d', 'Persona 5', '2017', 'ATLUS', 'ATLUS', 'JRPG / Visual Novel', 10, 4, 1, 'https://localhost:5001/game_images/Persona 5.jpg');
 INSERT INTO `playedgame` VALUES ('a90e10b7-c243-4a4e-ad74-b82e72ae3caa', 'Devil May Cry 4', '2008', 'CAPCOM', 'CAPCOM', 'Hack\'n Slash', 8, 1, 1, 'https://localhost:5001/game_images/Devil May Cry 4.jpg');
 INSERT INTO `playedgame` VALUES ('ab4413c2-a85a-4064-b379-885fb5a7d590', 'Star Wars Jedi Fallen Order', '2019', 'Respawn Entertainment', 'Electronic Arts', 'Action Adventure', 7, 1, 1, 'https://localhost:5001/game_images/Star Wars Jedi Fallen Order.jpg');
 INSERT INTO `playedgame` VALUES ('abc636e2-be01-43c4-9fe2-bc59ea0ca3ab', 'Portal 2', '2011', 'Valve', 'Valve', '1st Person Puzzle', 10, 1, 1, 'https://localhost:5001/game_images/Portal 2.jpg');
@@ -242,6 +257,7 @@ INSERT INTO `playedgame` VALUES ('b392cb92-8396-4365-b213-8e433c62761a', 'Dragon
 INSERT INTO `playedgame` VALUES ('b4484dd7-ed26-4939-8142-7383c21f0c26', 'Portal', '2007', 'Valve', 'Valve', 'Puzzle', 10, 1, 1, 'https://localhost:5001/game_images/Portal.jpg');
 INSERT INTO `playedgame` VALUES ('b4a8a3a4-848e-4573-b196-bd410fb9d442', 'Harry Potter and the Sorcerer\'s Stone', '2001', 'KnowWonder', 'Electronic Arts', 'Action Adventure', 7, 2, 5, 'https://localhost:5001/game_images/Harry Potter and the Sorcerer\'s Stone.jpg');
 INSERT INTO `playedgame` VALUES ('b6830a6d-8c0c-4554-8106-38b908ab554e', 'The Red Strings Club', '2018', 'Deconstruct Team', 'Devolver Digital', 'Visual Novel', 9, 1, 1, 'https://localhost:5001/game_images/The Red Strings Club.jpg');
+INSERT INTO `playedgame` VALUES ('b7e2938e-2a2d-4e78-a53d-be961daebbd8', 'Final Fantasy 2 Pixel Remaster', '2021', 'Square Enix', 'Square Enix', 'JRPG', 3, 1, 5, 'https://localhost:5001/game_images/Final Fantasy 2.jpg');
 INSERT INTO `playedgame` VALUES ('b8aec9d6-ebe4-4235-8600-f45df920f6aa', 'Kingdom Hearts 358-2 Days', '2009', 'Square Enix', 'Square Enix', 'Action JRPG', 7, 8, 1, 'https://localhost:5001/game_images/Kingdom Hearts 358-2 Days.jpg');
 INSERT INTO `playedgame` VALUES ('b93d8f4c-4bf1-49c0-b0df-90ec290a091f', 'Rage', '2011', 'id Software', 'Bethesda', '1st Person Shooter', 6, 1, 1, 'https://localhost:5001/game_images/Rage.jpg');
 INSERT INTO `playedgame` VALUES ('ba6fd473-729e-4225-9e30-60d0a6259592', 'X-Blades', '2007', 'TopWare, Gaijin Entertaiment', 'SouthPeak Games', 'Hack\'n Slash', 5, 1, 5, 'https://localhost:5001/game_images/X-Blades.jpg');
@@ -252,12 +268,13 @@ INSERT INTO `playedgame` VALUES ('c20f9687-326f-4084-ac6d-bd264d7525a9', 'Night 
 INSERT INTO `playedgame` VALUES ('c2f31855-7a8e-427d-8015-8417659bc6b5', 'Assassin\'s Creed Origins', '2017', 'Ubisoft', 'Ubisoft', 'Open World Action Adventure', 8, 1, 5, 'https://localhost:5001/game_images/Assassin\'s Creed Origins.jpg');
 INSERT INTO `playedgame` VALUES ('c3de7e84-dddd-4c27-91e6-86d7fe947e14', 'Saints Row 4', '2013', 'Volition', 'Deep Silver', 'Open World Action', 9, 1, 1, 'https://localhost:5001/game_images/Saints Row 4.jpg');
 INSERT INTO `playedgame` VALUES ('c3fe7fba-c0dc-4d7a-87d4-7c0d4728bc53', 'FIFA 08', '2007', 'EA Sports', 'Electronic Arts', 'Football', 8, 1, 1, 'https://localhost:5001/game_images/FIFA 08.jpg');
+INSERT INTO `playedgame` VALUES ('c4e45e83-f846-4da8-9799-7fa57067a38d', 'Dungeon Encounters', '2021', 'Square Enix', 'Square Enix', 'Dungeon Crawler', 2, 1, 5, 'https://localhost:5001/game_images/Dungeon Encounters.jfif');
 INSERT INTO `playedgame` VALUES ('c74b0737-2485-444f-8913-2910b5f2d206', 'Sleeping Dogs', '2012', 'United Front Games', 'Square Enix', '3D Beat\'em Up', 7, 1, 1, 'https://localhost:5001/game_images/Sleeping Dogs.jpg');
 INSERT INTO `playedgame` VALUES ('c93347d4-7c9d-4e2d-a260-ef369c422052', 'Bloodstained Ritual of the Night', '2019', 'ArtPlay', '505 Games', 'Metroidvania', 7, 1, 1, 'https://localhost:5001/game_images/Bloodstained Ritual of the Night.jpg');
 INSERT INTO `playedgame` VALUES ('cc07bb33-7333-438c-b361-89b2471ab018', 'Portal Knights', '2016', 'Keen Games', '505 Games', 'Sandbox Adventure', 6, 1, 5, 'https://localhost:5001/game_images/Portal Knights.jpg');
 INSERT INTO `playedgame` VALUES ('cd06eb86-e51b-4119-920c-b1527e7486f9', 'League of Legends', '2009', 'Riot Games', 'Riot Games', 'MOBA', 8, 1, 3, 'https://localhost:5001/game_images/League of Legends.jpg');
 INSERT INTO `playedgame` VALUES ('cdeb5e59-2178-4676-99e3-3136f72a7143', 'Euro Truck Simulator 2', '2012', 'SCS Software', 'SCS Software', 'Driving Simulation', 9, 1, 2, 'https://localhost:5001/game_images/Euro Truck Simulator 2.jpg');
-INSERT INTO `playedgame` VALUES ('ce1e976e-3c67-4d31-80e0-9ba1c5e0c223', 'Scarlet Nexus', '2021', 'Bandai Namco', 'Bandai Namco', 'Hack\'n Slash / JRPG', 10, 1, 6, 'https://localhost:5001/game_images/Scarlet Nexus.jpg');
+INSERT INTO `playedgame` VALUES ('ce1e976e-3c67-4d31-80e0-9ba1c5e0c223', 'Scarlet Nexus', '2021', 'Bandai Namco', 'Bandai Namco', 'Hack\'n Slash / JRPG', 10, 1, 1, 'https://localhost:5001/game_images/Scarlet Nexus.jpg');
 INSERT INTO `playedgame` VALUES ('ce6276f9-faec-49ab-916b-bb1c74039210', 'Mario Kart DS', '2005', 'Nintendo', 'Nintendo', 'Racing', 5, 8, 2, 'https://localhost:5001/game_images/Mario Kart DS.jpg');
 INSERT INTO `playedgame` VALUES ('cebc85fd-1b39-45a3-a77a-b10a9ceb6572', 'Ori and the Blind Forest', '2015', 'Moon Studios', 'Microsoft', 'Platform Adventure', 9, 1, 1, 'https://localhost:5001/game_images/Ori and the Blind Forest.jpg');
 INSERT INTO `playedgame` VALUES ('d0062c9f-6b90-4a59-9025-3d9894c64a91', 'Tales of Zestiria', '2015', 'Bandai Namco', 'Bandai Namco', 'Action JRPG', 7, 1, 1, 'https://localhost:5001/game_images/Tales of Zestiria.jpg');
@@ -267,6 +284,7 @@ INSERT INTO `playedgame` VALUES ('d5104313-8195-4aed-b26b-51518beb2ad8', 'Dead o
 INSERT INTO `playedgame` VALUES ('d6b14996-79df-415e-ada2-e8704da92364', 'Ninj Gaiden Sigma 2', '2009', 'Team Ninja', 'Koei Tecmo', 'Hack\'n Slash', 7, 1, 1, 'https://localhost:5001/game_images/Ninja Gaiden Sigma 2.jpg');
 INSERT INTO `playedgame` VALUES ('d7facd1c-e866-43ad-8748-ec1716bfb75d', 'FIFA 18', '2017', 'EA Sports', 'Electronic Arts', 'Sports / Football', 7, 1, 2, 'https://localhost:5001/game_images/FIFA 18.jpg');
 INSERT INTO `playedgame` VALUES ('dae95bc2-3caa-43c5-91db-a9344595df5e', 'Rocket League', '2015', 'Psyonix', 'Psyonix', 'Sports/Vehicle Football', 10, 1, 2, 'https://localhost:5001/game_images/Rocket League.jpg');
+INSERT INTO `playedgame` VALUES ('db39e8b8-c4f7-48cf-935a-6dd5965564db', 'Mass Effect Legendary Edition', '2021', 'Bioware', 'Electronic Arts', '3rd Person Shooter RPG', 10, 1, 4, 'https://localhost:5001/game_images/Mass Effect Legendary Edition.jpg');
 INSERT INTO `playedgame` VALUES ('df148196-2fe5-46e5-b3d4-f6eb03308b9d', 'Bleach Dark Souls', '2007', 'Treasure Co. Ltd', 'SEGA, Viz Media', 'Fighting', 7, 8, 1, 'https://localhost:5001/game_images/Bleach Dark Souls.jpg');
 INSERT INTO `playedgame` VALUES ('e0a39d4a-c453-4e04-9504-f86d092399ca', 'Pokémon Shield', '2019', 'Gamefreak', 'Nintendo', 'JRPG', 4, 11, 1, 'https://localhost:5001/game_images/Pokémon Shield.jpg');
 INSERT INTO `playedgame` VALUES ('e67970b9-4e9d-40e9-b31d-d3b63a09981f', 'The Legend of Zelda Ocarina of Time 3D', '2011', 'Nintendo', 'Nintendo', 'Action Adventure', 9, 9, 1, 'https://localhost:5001/game_images/The Legend of Zelda Ocarina of Time 3D.jpg');
@@ -276,6 +294,7 @@ INSERT INTO `playedgame` VALUES ('e875cfe9-b5db-4738-9cc6-29e128579222', 'Assasi
 INSERT INTO `playedgame` VALUES ('e8ab5ecd-14e2-4e42-a58a-9c649923fd92', 'Shin Megami Tensei Devil Survivor Overclocked', '2011', 'ATLUS', 'ATLUS', 'Tactical JRPG', 10, 9, 1, 'https://localhost:5001/game_images/Shin Megami Tensei Devil Survivor Overclocked.jpg');
 INSERT INTO `playedgame` VALUES ('eb5567d3-2071-46bd-a1ee-7dedfe0862f1', 'Toy Story Racer', '2001', 'Traveler\'s Tales', 'Disney Interactive, Activision', 'Racing', 6, 2, 2, 'https://localhost:5001/game_images/Toy Story Racer.jpg');
 INSERT INTO `playedgame` VALUES ('eb594614-4cfc-4944-b9e2-2feaf599bbda', 'Duck Game', '2016', 'Landon Podbielski', 'Adult Swim Games', '2D Platform Shooter', 10, 1, 2, 'https://localhost:5001/game_images/Duck Game.jpg');
+INSERT INTO `playedgame` VALUES ('ef217178-0829-4e07-9fb8-4065656ade12', 'Trials of Mana', '2020', 'Xeen', 'Square Enix', 'Action JRPG', 5, 1, 5, 'https://localhost:5001/game_images/Trials of Mana.jpg');
 INSERT INTO `playedgame` VALUES ('ef406171-7720-451c-93b0-ab4cb9f02c9f', 'Bastion', '2010', 'Supergiant Games', 'Warner Bros Interactive', 'Action Adventure isometric', 8, 1, 1, 'https://localhost:5001/game_images/Bastion.jpg');
 INSERT INTO `playedgame` VALUES ('f23c1537-c00e-4e4b-8dca-2f270e397631', 'Unreal Tournament', '1999', 'Epic Games', 'Epic Games', '1st Person Shooter', 9, 1, 2, 'https://localhost:5001/game_images/Unreal Tournament.jpg');
 INSERT INTO `playedgame` VALUES ('f2c57145-d2ae-4515-b98a-ff2bcdbf70fd', 'Naruto Shippuden Ultimate Ninja Storm 2', '2010', 'CyberConect 2', 'Bandai Namco', 'Arena Fighter', 6, 1, 5, 'https://localhost:5001/game_images/Naruto Shippuden Ultimate Ninja Storm 2.jpg');
@@ -284,9 +303,10 @@ INSERT INTO `playedgame` VALUES ('f393aded-90cf-4448-970b-3724499e9b61', 'Steam 
 INSERT INTO `playedgame` VALUES ('f429db97-786a-4a07-b1b8-90519a7d33cb', 'Granblue Fantasy Versus', '2020', 'Arc System Works', 'XSEED Games, Marvelous, CyGames', 'Fighting', 7, 1, 2, 'https://localhost:5001/game_images/Granblue Fantasy Versus.jpg');
 INSERT INTO `playedgame` VALUES ('f5566305-6854-499d-94ca-b6005e4c88da', 'Dark Souls', '2010', 'From Software', 'Bandai Namco', 'Action RPG / Souls', 8, 1, 5, 'https://localhost:5001/game_images/Dark Souls.jpg');
 INSERT INTO `playedgame` VALUES ('f587e256-58bb-42af-a582-95db70a8382d', 'Atelier Ryza Ever Darkness & The Secret Hideout', '2019', 'Gust Co. Ltd.', 'Koei Tecmo', 'JRPG', 7, 1, 5, 'https://localhost:5001/game_images/Atelier Ryza Ever Darkness & The Secret Hideout.jpg');
+INSERT INTO `playedgame` VALUES ('f645fbdf-81b1-494c-827e-7b9369591ab7', 'Tales of Arise', '2021', 'Bandai Namco', 'Bandai Namco', 'Action JRPG', 10, 1, 1, 'https://localhost:5001/game_images/Tales of Arise.jpg');
 INSERT INTO `playedgame` VALUES ('f7bd6f01-7f5b-459c-8be4-a016d6165986', 'Driver', '1999', 'Ubisoft Reflections', 'Ubisoft, Gameloft, Atari', 'Open World Driving', 5, 2, 2, 'https://localhost:5001/game_images/Driver.jpg');
 INSERT INTO `playedgame` VALUES ('f9fa494f-2c36-4d72-9dc4-d6a720023748', 'Dragon Age Inquisition', '2014', 'Bioware', 'Electronic Arts', 'Action RPG', 6, 1, 1, 'https://localhost:5001/game_images/Dragon Age Inquisition.jpg');
-INSERT INTO `playedgame` VALUES ('fcf4b35b-2c32-495c-912d-74f744b3e8ab', 'Final Fantasy 2', '1991', 'Square Enix', 'Square Enix', 'JRPG', 6, 7, 5, 'https://localhost:5001/game_images/Final Fantasy 2.jpg');
+INSERT INTO `playedgame` VALUES ('fde62fca-6d9d-4145-bfed-16d95f38bb4b', 'Haven', '2020', 'The Game Bakers', 'The Game Bakers', 'Action Adventure', 8, 1, 4, 'https://localhost:5001/game_images/Haven_Poster01_Haven_1920.jpg');
 INSERT INTO `playedgame` VALUES ('fe08d3aa-ccc6-4eba-8435-070bc78c2735', 'Code Vein', '2019', 'Bandai Namco', 'Bandai Namco', 'Action RPG / Soulslike', 7, 1, 5, 'https://localhost:5001/game_images/Code Vein.jpg');
 INSERT INTO `playedgame` VALUES ('ff1e4c6c-5e13-4c96-957f-838b972935ea', 'Fire Emblem Three Houses', '2019', 'Intelligent Systems', 'Nintendo', 'Tactical JRPG', 5, 11, 1, 'https://localhost:5001/game_images/Fire Emblem Three Houses.jpg');
 INSERT INTO `playedgame` VALUES ('fffdb5e7-1af6-4c8f-85fe-66f510250f6a', 'Nier Replicant ver 1.22474487139...', '2021', 'Toylogic', 'Square Enix', 'Action JRPG', 10, 1, 1, 'https://localhost:5001/game_images/Nier Replicant ver 1.22474487139....jpg');
@@ -299,7 +319,7 @@ CREATE TABLE `status`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of status
@@ -325,11 +345,14 @@ CREATE TABLE `top10characters`  (
   INDEX `top10nameid`(`top10nameid`) USING BTREE,
   CONSTRAINT `top10characters_ibfk_1` FOREIGN KEY (`characterid`) REFERENCES `character` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `top10characters_ibfk_2` FOREIGN KEY (`top10nameid`) REFERENCES `top10name` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of top10characters
 -- ----------------------------
+INSERT INTO `top10characters` VALUES (1, 1, 1, 1);
+INSERT INTO `top10characters` VALUES (2, 2, 2, 1);
+INSERT INTO `top10characters` VALUES (3, 3, 3, 1);
 
 -- ----------------------------
 -- Table structure for top10games
@@ -345,7 +368,7 @@ CREATE TABLE `top10games`  (
   INDEX `top10_name`(`top10nameid`) USING BTREE,
   CONSTRAINT `top10_game` FOREIGN KEY (`gameid`) REFERENCES `playedgame` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `top10_name` FOREIGN KEY (`top10nameid`) REFERENCES `top10name` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of top10games
@@ -363,9 +386,9 @@ INSERT INTO `top10games` VALUES (12, '4a2a3240-4f87-4835-bfd6-2096978abbb2', 7, 
 INSERT INTO `top10games` VALUES (13, '66de123b-2a1b-4b99-b78e-0b95a109dd9b', 8, 1);
 INSERT INTO `top10games` VALUES (14, 'abc636e2-be01-43c4-9fe2-bc59ea0ca3ab', 9, 1);
 INSERT INTO `top10games` VALUES (15, 'fffdb5e7-1af6-4c8f-85fe-66f510250f6a', 1, 1);
-INSERT INTO `top10games` VALUES (18, 'ce1e976e-3c67-4d31-80e0-9ba1c5e0c223', 10, 1);
 INSERT INTO `top10games` VALUES (19, '7d45769b-393d-4a09-9870-76f83ef94669', 1, 1);
 INSERT INTO `top10games` VALUES (23, '50a01c39-5efb-41fc-9101-d8b2fc166e7d', 4, 1);
+INSERT INTO `top10games` VALUES (36, 'f645fbdf-81b1-494c-827e-7b9369591ab7', 10, 1);
 
 -- ----------------------------
 -- Table structure for top10name
@@ -375,7 +398,7 @@ CREATE TABLE `top10name`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of top10name
