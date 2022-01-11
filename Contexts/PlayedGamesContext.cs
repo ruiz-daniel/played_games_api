@@ -17,6 +17,7 @@ namespace DRG_Api.Contexts
         public DbSet<Top10Name> top10name { get; set; }
         public DbSet<Character> character { get; set; }
         public DbSet<Top10Character> top10characters { get; set; }
+        public DbSet<User> user { get; set; }
 
     }
 }
