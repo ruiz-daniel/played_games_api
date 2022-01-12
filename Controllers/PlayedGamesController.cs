@@ -7,7 +7,7 @@ using System.IO;
 
 namespace DRG_Api.Controllers
 {
-    [Route("api/PlayedGames")]
+    [Route("drgapi/[controller]")]
     [ApiController]
     public class PlayedGamesController : ControllerBase
     {

@@ -5,7 +5,7 @@ using DRG_Api.Services;
 
 namespace DRG_Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("drgapi/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -21,7 +21,7 @@ namespace DRG_Api.Controllers
         {
             return await _repositories.Users.login(username, password);
         }
-        [HttpPost("user")]
+        [HttpPost]
         public async Task<ActionResult<PlayedGame>> PostUser(User user)
         {
             user.userid = System.Guid.NewGuid().ToString();

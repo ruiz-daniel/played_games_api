@@ -7,7 +7,7 @@ using System.IO;
 
 namespace DRG_Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("drgapi/[controller]")]
     [ApiController]
     public class ImagesController : ControllerBase
     {
@@ -21,7 +21,7 @@ namespace DRG_Api.Controllers
         }
 
 
-        [HttpPost("gameImage")]
+        [HttpPost]
         public string UploadFile(IFormFile image)
         {
             string uniqueFileName = null;
