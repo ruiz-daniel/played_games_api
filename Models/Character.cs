@@ -8,7 +8,7 @@ namespace DRG_Api.Models
         public string wikia_url { get; set; }
         public string image { get; set; }
         public bool favorite {get; set;}
-        public string username {get; set;}
+        public string userid {get; set;}
         public User user {get; set;}
     }
 }
