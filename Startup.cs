@@ -72,7 +72,8 @@ namespace DRG_Api
             app.UseRouting();
 
 
-            // app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseCors();
 
             app.UseEndpoints(endpoints =>
