@@ -7,7 +7,7 @@ using System.IO;
 
 namespace DRG_Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("drgapi/[controller]")]
     [ApiController]
     public class CharactersController : ControllerBase
     {
