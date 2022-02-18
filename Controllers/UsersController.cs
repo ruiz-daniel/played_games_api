@@ -28,7 +28,7 @@ namespace DRG_Api.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(UserDTO userData)
+        public async Task<IActionResult> Login(User userData)
         {
             var user = await _repositories.Users.FindOneBy(u => u.username == userData.username);
             if (user == null)
@@ -39,8 +39,8 @@ namespace DRG_Api.Controllers
             {
                 return BadRequest(new {message = "Invalid Credentials"});
             }
-            
-            return Ok(user);
+            var userDTO = new UserDTO(user.username, user.display_name);
+            return Ok(userDTO);
         }
 
         [HttpDelete("user/{id}")]
