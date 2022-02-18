@@ -14,7 +14,14 @@ namespace DRG_Api.Repositories
     {
         public CharacterRepository(PlayedGamesContext context) : base(context)
         {
+            
 
+        }
+        new public async Task<Character> Find(int id) 
+        {
+            var character = await _context.character.FindAsync(id);
+            character.game = await _context.playedgame.FindAsync(character.gameid);
+            return character;
         }
     }
 }

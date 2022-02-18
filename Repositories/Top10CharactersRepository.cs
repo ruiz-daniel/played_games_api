@@ -23,6 +23,7 @@ namespace DRG_Api.Repositories
             foreach (Top10Character character in characters)
             {
                 character.character = await _context.character.FindAsync(character.characterid);
+                character.character.game = await _context.playedgame.FindAsync(character.character.gameid);
                 character.top10name = await _context.top10name.FindAsync(character.top10nameid);
             }
             return characters;
@@ -34,6 +35,7 @@ namespace DRG_Api.Repositories
             foreach (Top10Character character in top10)
             {
                 character.character = await _context.character.FindAsync(character.characterid);
+                character.character.game = await _context.playedgame.FindAsync(character.character.gameid);
                 character.top10name = await _context.top10name.FindAsync(character.top10nameid);
             }
             return top10;
