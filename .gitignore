@@ -10,7 +10,7 @@
 wwwroot/game_images/
 
 #database data
-drg_db/drg_db.sql
+drg_db/
 
 # User-specific files
 *.suo
