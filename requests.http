@@ -1,0 +1,26 @@
+@base_url = https://localhost:5001/drgapi
+
+curl -X GET {{base_url}}/PlayedGames
+
+###
+
+POST {{base_url}}/Auth/authentication
+Content-Type: application/json
+
+{
+    "username": "weiss",
+    "password": "123"
+}
+
+###
+
+GET {{base_url}}/Characters
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRyZ3dlaXNzIiwibmJmIjoxNjUzODQyMTE5LCJleHAiOjE2NTM4NDU3MTksImlhdCI6MTY1Mzg0MjExOX0.A3n0j-L6EVooah0Q4G-OHG1TJu4Bg2Gro9IK9QyFXss
+###
+POST {{base_url}}/user/login
+Content-Type: application/json
+
+{
+    "username": "drgweiss",
+    "password": "2B0108KmF"
+}
