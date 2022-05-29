@@ -50,14 +50,7 @@ namespace DRG_Api
                         .SwaggerDoc("v1",
                         new OpenApiInfo { Title = "DRG_Api", Version = "v1" });
                 });
-            services
-                .AddHttpClient("games",
-                c =>
-                {
-                    c.BaseAddress =
-                        new Uri("https://60819b7273292b0017cdde00.mockapi.io/drg_game/");
-                    c.DefaultRequestHeaders.Add("Accept", "application/json");
-                });
+
             services
                 .AddCors(options =>
                 {

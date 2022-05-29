@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DRG_Api.Authentication;
+using DRG_Api.Dtos;
 using DRG_Api.Models;
 using DRG_Api.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -9,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DRG_Api.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("drgapi/user")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -23,36 +25,57 @@ namespace DRG_Api.Controllers
             this.jwtAuth = jwtAuth;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> AllUsers()
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public async Task<ActionResult<PlayedGame>> PostUser(User user)
         {
-            return await _repositories.Users.FindAll();
-        }
+            user.userid = System.Guid.NewGuid().ToString();
+            user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
+            await _repositories.Users.CreateAsync(user);
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> UserById(string id)
-        {
-            var user = await _repositories.Users.Find(id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return user;
+            return CreatedAtAction(nameof(PostUser),
+            new { id = user.userid },
+            user);
         }
 
         [AllowAnonymous]
-        [HttpPost("authentication")]
-        public IActionResult
+        [HttpPost("login")]
+        public async Task<IActionResult>
         Authentication([FromBody] UserCredential userCredential)
         {
+            var user =
+                await _repositories
+                    .Users
+                    .FindOneBy(u => u.username == userCredential.username);
+            if (user == null)
+            {
+                Console
+                    .WriteLine("Invalid Username: " + userCredential.username);
+                return BadRequest(new { message = "Invalid Credentials" });
+            }
+            if (
+                !BCrypt
+                    .Net
+                    .BCrypt
+                    .Verify(userCredential.password, user.password)
+            )
+            {
+                Console.WriteLine("Invalid Password");
+                return BadRequest(new { message = "Invalid Credentials" });
+            }
             var token =
                 jwtAuth
                     .Authentication(userCredential.username,
                     userCredential.password);
             if (token == null) return Unauthorized();
-            return Ok(token);
+
+            var dto =
+                new UserDTO(user.username,
+                    user.display_name,
+                    user.userid,
+                    token);
+
+            return Ok(dto);
         }
     }
 }

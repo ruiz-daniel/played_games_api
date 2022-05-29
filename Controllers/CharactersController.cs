@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DRG_Api.Controllers
 {
-    [Authorize]
     [Route("drgapi/[controller]")]
     [ApiController]
     public class CharactersController : ControllerBase
