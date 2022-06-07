@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using DRG_Api.Models;
 using DRG_Api.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DRG_Api.Controllers
 {
@@ -22,24 +22,50 @@ namespace DRG_Api.Controllers
         {
             return await _repositories.Top10Games.FindAll();
         }
-        
-        [HttpGet("{name}")]
-        public async Task<ActionResult<IEnumerable<Top10Game>>> GetTop10GamesBy(string name)
+
+        [HttpGet("user")]
+        public async Task<ActionResult<IEnumerable<Top10Game>>>
+        GetTop10Games(string userid)
         {
-            var top10name = await _repositories.Top10Names.FindOneBy(top10name => top10name.name.Contains(name));
-            var top10 = await _repositories.Top10Games.FindBy(game => game.top10nameid == top10name.id);
+            return await _repositories
+                .Top10Games
+                .FindBy(game => game.userid == userid);
+        }
+
+        [HttpGet("user/{name}")]
+        public async Task<ActionResult<IEnumerable<Top10Game>>>
+        GetTop10GamesBy(string name, string userid)
+        {
+            var top10name =
+                await _repositories
+                    .Top10Names
+                    .FindOneBy(top10name =>
+                        top10name.name.Contains(name) &&
+                        top10name.userid == userid);
+            var top10 =
+                await _repositories
+                    .Top10Games
+                    .FindBy(game =>
+                        game.top10nameid == top10name.id &&
+                        game.userid == userid);
 
             return top10;
         }
 
         [HttpPost("{top10name}")]
-        public async Task<ActionResult<Top10Game>> PostTop10Game(Top10Game game, string top10name)
+        public async Task<ActionResult<Top10Game>>
+        PostTop10Game(Top10Game game, string top10name)
         {
-            var top10nameObject = await _repositories.Top10Names.FindOneBy(top10 => top10.name.Contains(top10name));
+            var top10nameObject =
+                await _repositories
+                    .Top10Names
+                    .FindOneBy(top10 => top10.name.Contains(top10name));
             game.top10nameid = top10nameObject.id;
             await _repositories.Top10Games.CreateAsync(game);
 
-            return CreatedAtAction(nameof(GetTop10Games), new { id = game.id }, game);
+            return CreatedAtAction(nameof(GetTop10Games),
+            new { id = game.id },
+            game);
         }
 
         [HttpPut("{id}")]
@@ -58,7 +84,6 @@ namespace DRG_Api.Controllers
             {
                 return NotFound();
             }
-
 
             return NoContent();
         }

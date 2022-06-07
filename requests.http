@@ -1,16 +1,7 @@
 @base_url = https://localhost:5001/drgapi
 
-curl -X GET {{base_url}}/PlayedGames
+GET {{base_url}}/PlayedGames?userid=1e6c520c-34a7-41c3-bcad-80b5158128a9
 
-###
-
-POST {{base_url}}/Auth/authentication
-Content-Type: application/json
-
-{
-    "username": "weiss",
-    "password": "123"
-}
 
 ###
 

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using DRG_Api.Models;
 using DRG_Api.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DRG_Api.Controllers
 {
@@ -22,13 +22,27 @@ namespace DRG_Api.Controllers
         {
             return await _repositories.Top10Names.FindAll();
         }
+
+        [HttpGet("user/{userid}")]
+        public async Task<ActionResult<IEnumerable<Top10Name>>>
+        GetTop10Names(string userid)
+        {
+            return await _repositories
+                .Top10Names
+                .FindBy(name => name.userid == userid);
+        }
+
         [HttpPost]
-        public async Task<ActionResult<Top10Name>> PostTop10Name(Top10Name top10)
+        public async Task<ActionResult<Top10Name>>
+        PostTop10Name(Top10Name top10)
         {
             await _repositories.Top10Names.CreateAsync(top10);
 
-            return CreatedAtAction(nameof(GetTop10Names), new { id = top10.id }, top10);
+            return CreatedAtAction(nameof(GetTop10Names),
+            new { id = top10.id },
+            top10);
         }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTop10Name(int id, Top10Name name)
         {
@@ -46,9 +60,9 @@ namespace DRG_Api.Controllers
                 return NotFound();
             }
 
-
             return NoContent();
         }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTop10Name(int id)
         {

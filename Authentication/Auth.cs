@@ -8,10 +8,6 @@ namespace DRG_Api.Authentication
 {
     public class Auth : IJwtAuth
     {
-        private readonly string username = "kirtesh";
-
-        private readonly string password = "Demo1";
-
         private readonly string key;
 
         public Auth(string key)
@@ -21,11 +17,6 @@ namespace DRG_Api.Authentication
 
         public string Authentication(string username, string password)
         {
-            if (!(username.Equals(username) || password.Equals(password)))
-            {
-                return null;
-            }
-
             // 1. Create Security Token Handler
             var tokenHandler = new JwtSecurityTokenHandler();
 

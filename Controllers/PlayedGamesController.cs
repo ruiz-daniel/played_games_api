@@ -1,9 +1,9 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using DRG_Api.Models;
 using DRG_Api.Services;
-using System.IO;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DRG_Api.Controllers
 {
@@ -20,10 +20,22 @@ namespace DRG_Api.Controllers
 
         // GET: api/PlayedGames
         [HttpGet]
-
-        public async Task<ActionResult<IEnumerable<PlayedGame>>> GetPlayedGames()
+        public async Task<ActionResult<IEnumerable<PlayedGame>>>
+        GetPlayedGames()
         {
             return await _repositories.PlayedGames.FindAll();
+        }
+
+        // GET: api/PlayedGames?userid
+        [HttpGet("user/{userid}")]
+        public async Task<ActionResult<IEnumerable<PlayedGame>>>
+        GetPlayedGames(string userid)
+        {
+            var playedgames =
+                await _repositories
+                    .PlayedGames
+                    .FindBy(game => game.userid == userid);
+            return playedgames;
         }
 
         // GET: api/PlayedGames/5
@@ -41,23 +53,32 @@ namespace DRG_Api.Controllers
         }
 
         [HttpGet("name/{name}")]
-        public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromName(string name)
+        public async Task<ActionResult<IEnumerable<PlayedGame>>>
+        GetGamesFromName(string name)
         {
-            var playedgames = await _repositories.PlayedGames.FindBy(game => game.name.Contains(name));
+            var playedgames =
+                await _repositories
+                    .PlayedGames
+                    .FindBy(game => game.name.Contains(name));
             return playedgames;
         }
 
         [HttpGet("status/{status}")]
-        public async Task<ActionResult<IEnumerable<PlayedGame>>> GetGamesFromStatus(int status)
+        public async Task<ActionResult<IEnumerable<PlayedGame>>>
+        GetGamesFromStatus(int status)
         {
-            var playedgames = await _repositories.PlayedGames.FindBy(game => game.statusid == status);
+            var playedgames =
+                await _repositories
+                    .PlayedGames
+                    .FindBy(game => game.statusid == status);
             return playedgames;
         }
 
         // PUT: api/PlayedGames/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPlayedGame(string id, PlayedGame playedGame)
+        public async Task<IActionResult>
+        PutPlayedGame(string id, PlayedGame playedGame)
         {
             if (id != playedGame.id)
             {
@@ -73,20 +94,25 @@ namespace DRG_Api.Controllers
                 return NotFound();
             }
 
-
             return NoContent();
         }
 
         // POST: api/PlayedGames
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<PlayedGame>> PostPlayedGame(PlayedGame playedGame)
+        public async Task<ActionResult<PlayedGame>>
+        PostPlayedGame(PlayedGame playedGame)
         {
             playedGame.id = System.Guid.NewGuid().ToString();
-            playedGame.image = Path.Combine("https://localhost:5001/game_images/", playedGame.image);
+            playedGame.image =
+                Path
+                    .Combine("https://localhost:5001/game_images/",
+                    playedGame.image);
             await _repositories.PlayedGames.CreateAsync(playedGame);
 
-            return CreatedAtAction(nameof(GetPlayedGame), new { id = playedGame.id }, playedGame);
+            return CreatedAtAction(nameof(GetPlayedGame),
+            new { id = playedGame.id },
+            playedGame);
         }
 
         // DELETE: api/PlayedGames/5
@@ -117,9 +143,5 @@ namespace DRG_Api.Controllers
         {
             return await _repositories.Statuses.FindAll();
         }
-
-        
-
-        
     }
 }
