@@ -46,18 +46,18 @@ namespace DRG_Api.Controllers
             var user =
                 await _repositories
                     .Users
-                    .FindOneBy(u => u.username == userCredential.username);
-            if (user == null)
+                    .FindBy(u => u.username == userCredential.username);
+            Console.WriteLine(user.Count);
+            if (user.Count == 0)
             {
-                Console
-                    .WriteLine("Invalid Username: " + userCredential.username);
+                Console.WriteLine("Invalid Username ");
                 return BadRequest(new { message = "Invalid Credentials" });
             }
             if (
                 !BCrypt
                     .Net
                     .BCrypt
-                    .Verify(userCredential.password, user.password)
+                    .Verify(userCredential.password, user[0].password)
             )
             {
                 Console.WriteLine("Invalid Password");
@@ -70,9 +70,9 @@ namespace DRG_Api.Controllers
             if (token == null) return Unauthorized();
 
             var dto =
-                new UserDTO(user.username,
-                    user.display_name,
-                    user.userid,
+                new UserDTO(user[0].username,
+                    user[0].display_name,
+                    user[0].userid,
                     token);
 
             return Ok(dto);
