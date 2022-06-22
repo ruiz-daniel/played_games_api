@@ -47,7 +47,6 @@ namespace DRG_Api.Controllers
                 await _repositories
                     .Users
                     .FindBy(u => u.username == userCredential.username);
-            Console.WriteLine(user.Count);
             if (user.Count == 0)
             {
                 Console.WriteLine("Invalid Username ");
