@@ -31,7 +31,7 @@ namespace DRG_Api.Authentication
                         new ClaimsIdentity(new Claim[] {
                                 new Claim(ClaimTypes.Name, username)
                             }),
-                    Expires = DateTime.UtcNow.AddHours(1),
+                    Expires = DateTime.UtcNow.AddHours(12),
                     SigningCredentials =
                         new SigningCredentials(new SymmetricSecurityKey(tokenKey),
                             SecurityAlgorithms.HmacSha256Signature)
