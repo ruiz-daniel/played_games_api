@@ -24,7 +24,7 @@ namespace DRG_Api.Controllers
             _webHostEnvironment = environment;
         }
 
-        [HttpPost]
+        [HttpPost("{userid}")]
         public string UploadFile(IFormFile image, string userid)
         {
             string uniqueFileName = null;

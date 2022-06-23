@@ -104,10 +104,12 @@ namespace DRG_Api.Controllers
         PostPlayedGame(PlayedGame playedGame)
         {
             playedGame.id = System.Guid.NewGuid().ToString();
-            playedGame.image =
+            var user_image_folder =
                 Path
                     .Combine("https://localhost:5001/game_images/",
-                    playedGame.image);
+                    playedGame.userid);
+            playedGame.image =
+                Path.Combine(user_image_folder, playedGame.image);
             await _repositories.PlayedGames.CreateAsync(playedGame);
 
             return CreatedAtAction(nameof(GetPlayedGame),
