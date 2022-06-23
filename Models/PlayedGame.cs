@@ -13,6 +13,9 @@ namespace DRG_Api.Models
         public int platformid { get; set; }
         public Status status { get; set; }
         public int statusid { get; set; }
+        public string description { get; set; }
         public string image { get; set; }
+        public string userid {get; set;}
+        public User user {get; set;}
     }
 }

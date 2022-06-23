@@ -15,6 +15,7 @@ namespace DRG_Api.Services
             Top10Names = new Top10NameRepository(_context);
             Characters = new CharacterRepository(_context);
             Top10Characters = new Top10CharactersRepository(_context);
+            Users = new UserRepository(_context);
 
         }
 
@@ -25,6 +26,7 @@ namespace DRG_Api.Services
         public ITop10NameRepository Top10Names { get; private set; }
         public ICharacterRepository Characters { get; private set; }
         public ITop10CharactersRepository Top10Characters { get; private set; }
+        public IUserRepository Users { get; private set; }
         public int Save()
         {
             return _context.SaveChanges();

@@ -1,0 +1,17 @@
+@base_url = https://localhost:5001/drgapi
+
+GET {{base_url}}/PlayedGames?userid=1e6c520c-34a7-41c3-bcad-80b5158128a9
+
+
+###
+
+GET {{base_url}}/PlayedGames/user/1e6c520c-34a7-41c3-bcad-80b5158128a9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRyZ3dlaXNzIiwibmJmIjoxNjU1OTkzNTAzLCJleHAiOjE2NTU5OTcxMDMsImlhdCI6MTY1NTk5MzUwM30.gRHfG9ka_hTY_rKWlSPJ2Qw10_hHG3NIQJw4R8cfaOg
+###
+POST {{base_url}}/user/login
+Content-Type: application/json
+
+{
+    "username": "drgweiss",
+    "password": "2B0108KmF"
+}
