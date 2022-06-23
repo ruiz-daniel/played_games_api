@@ -34,7 +34,7 @@ namespace DRG_Api.Controllers
                 .FindBy(game => game.userid == userid);
         }
 
-        [HttpGet("user/{name}")]
+        [HttpGet("user/{userid}/{name}")]
         public async Task<ActionResult<IEnumerable<Top10Game>>>
         GetTop10GamesBy(string name, string userid)
         {
