@@ -2,10 +2,12 @@ using System.Threading.Tasks;
 using DRG_Api.Dtos;
 using DRG_Api.Models;
 using DRG_Api.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DRG_Api.Controllers
 {
+    [Authorize]
     [Route("drgapi")]
     [ApiController]
     public class UsersController : ControllerBase

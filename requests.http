@@ -5,8 +5,8 @@ GET {{base_url}}/PlayedGames?userid=1e6c520c-34a7-41c3-bcad-80b5158128a9
 
 ###
 
-GET {{base_url}}/Characters
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRyZ3dlaXNzIiwibmJmIjoxNjUzODQyMTE5LCJleHAiOjE2NTM4NDU3MTksImlhdCI6MTY1Mzg0MjExOX0.A3n0j-L6EVooah0Q4G-OHG1TJu4Bg2Gro9IK9QyFXss
+GET {{base_url}}/PlayedGames/user/1e6c520c-34a7-41c3-bcad-80b5158128a9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRyZ3dlaXNzIiwibmJmIjoxNjU1OTkzNTAzLCJleHAiOjE2NTU5OTcxMDMsImlhdCI6MTY1NTk5MzUwM30.gRHfG9ka_hTY_rKWlSPJ2Qw10_hHG3NIQJw4R8cfaOg
 ###
 POST {{base_url}}/user/login
 Content-Type: application/json

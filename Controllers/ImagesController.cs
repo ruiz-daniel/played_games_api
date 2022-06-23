@@ -1,12 +1,14 @@
 using System;
 using System.IO;
 using DRG_Api.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DRG_Api.Controllers
 {
+    [Authorize]
     [Route("drgapi/[controller]")]
     [ApiController]
     public class ImagesController : ControllerBase
