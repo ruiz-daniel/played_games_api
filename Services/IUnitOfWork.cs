@@ -12,6 +12,7 @@ namespace DRG_Api.Services
         public ICharacterRepository Characters { get; }
         public ITop10CharactersRepository Top10Characters { get; }
         public IUserRepository Users { get; }
+        public IAdditionalInfoRepository AdditionalInfo { get; }
         int Save();
     }
 }
