@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DRG_Api.Controllers
 {
-    // [Authorize]
+    [Authorize]
     [Route("drgapi/[controller]")]
     [ApiController]
     public class AdditionalInfoController : ControllerBase

@@ -22,7 +22,7 @@ namespace DRG_Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(string id, User user)
         {
-            if (id != user.id)
+            if (id != user.userid)
             {
                 return BadRequest();
             }
