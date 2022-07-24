@@ -19,18 +19,38 @@ namespace DRG_Api.Controllers
             _repositories = unitOfWork;
         }
 
-        [HttpDelete("user/{id}")]
-        public async Task<IActionResult> DeleteUser(string id)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutUser(string id, User user)
         {
-            var user = await _repositories.Users.Find(id);
-            if (user == null)
+            if (id != user.id)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                await _repositories.Users.UpdateAsync(user);
+            }
+            catch
             {
                 return NotFound();
             }
 
-            await _repositories.Users.DeleteAsync(user);
-
             return NoContent();
         }
+
+        // [HttpDelete("user/{id}")]
+        // public async Task<IActionResult> DeleteUser(string id)
+        // {
+        //     var user = await _repositories.Users.Find(id);
+        //     if (user == null)
+        //     {
+        //         return NotFound();
+        //     }
+
+        //     await _repositories.Users.DeleteAsync(user);
+
+        //     return NoContent();
+        // }
     }
 }
