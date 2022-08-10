@@ -5,6 +5,7 @@ namespace DRG_Api.Services
     public interface IUnitOfWork : IDisposable
     {
         public PlayedGamesRepository PlayedGames { get; }
+        public GameRepository Games { get; }
         public StatusRepository Statuses { get; }
         public PlatformRepository Platforms { get; }
         public Top10GamesRepository Top10Games { get; }

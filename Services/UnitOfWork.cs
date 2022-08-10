@@ -11,6 +11,7 @@ namespace DRG_Api.Services
         {
             _context = context;
             PlayedGames = new PlayedGamesRepository(_context);
+            Games = new GameRepository(_context);
             Statuses = new StatusRepository(_context);
             Platforms = new PlatformRepository(_context);
             Top10Games = new Top10GamesRepository(_context);
@@ -22,6 +23,8 @@ namespace DRG_Api.Services
         }
 
         public PlayedGamesRepository PlayedGames { get; private set; }
+
+        public GameRepository Games { get; private set; }
 
         public StatusRepository Statuses { get; private set; }
 
