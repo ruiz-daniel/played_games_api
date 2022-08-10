@@ -53,7 +53,7 @@ namespace DRG_Api.Controllers
             game.image = Path.Combine("https://localhost:5001/game_images/general", game.image);
             await _repositories.Games.CreateAsync(game);
 
-            return CreatedAtAction(nameof(GetGame), new { id = game.id }, game);
+            return CreatedAtAction(nameof(GetGames), new { id = game.id }, game);
         }
 
         [HttpDelete("{id}")]
