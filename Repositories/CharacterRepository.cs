@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DRG_Api.Repositories
 {
-    public class CharacterRepository : GenericRepository<Character>, ICharacterRepository
+    public class CharacterRepository : GenericRepository<Character>
     {
         public CharacterRepository(PlayedGamesContext context) : base(context)
         {

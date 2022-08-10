@@ -21,23 +21,23 @@ namespace DRG_Api.Services
             AdditionalInfo = new AdditionalInfoRepository(_context);
         }
 
-        public IPlayedGamesRepository PlayedGames { get; private set; }
+        public PlayedGamesRepository PlayedGames { get; private set; }
 
-        public IStatusRepository Statuses { get; private set; }
+        public StatusRepository Statuses { get; private set; }
 
-        public IPlatformRepository Platforms { get; private set; }
+        public PlatformRepository Platforms { get; private set; }
 
-        public ITop10GamesRepository Top10Games { get; private set; }
+        public Top10GamesRepository Top10Games { get; private set; }
 
-        public ITop10NameRepository Top10Names { get; private set; }
+        public Top10NameRepository Top10Names { get; private set; }
 
-        public ICharacterRepository Characters { get; private set; }
+        public CharacterRepository Characters { get; private set; }
 
-        public ITop10CharactersRepository Top10Characters { get; private set; }
+        public Top10CharactersRepository Top10Characters { get; private set; }
 
-        public IUserRepository Users { get; private set; }
+        public UserRepository Users { get; private set; }
 
-        public IAdditionalInfoRepository AdditionalInfo { get; private set; }
+        public AdditionalInfoRepository AdditionalInfo { get; private set; }
 
         public int Save()
         {

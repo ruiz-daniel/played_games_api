@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DRG_Api.Repositories
 {
-    public class PlayedGamesRepository : GenericRepository<PlayedGame>, IPlayedGamesRepository
+    public class PlayedGamesRepository : GenericRepository<PlayedGame>
     {
         public PlayedGamesRepository(PlayedGamesContext context) : base(context)
         {

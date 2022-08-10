@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DRG_Api.Repositories
 {
-    public class Top10CharactersRepository : GenericRepository<Top10Character>, ITop10CharactersRepository
+    public class Top10CharactersRepository : GenericRepository<Top10Character>
     {
         public Top10CharactersRepository ( PlayedGamesContext context) : base(context)
         {
