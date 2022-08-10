@@ -14,6 +14,8 @@ namespace DRG_Api.Contexts
 
         public DbSet<PlayedGame> playedgame { get; set; }
 
+        public DbSet<Game> game { get; set; }
+
         public DbSet<Platform> platform { get; set; }
 
         public DbSet<Status> status { get; set; }
