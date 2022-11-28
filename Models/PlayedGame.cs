@@ -35,5 +35,7 @@ namespace DRG_Api.Models
         public User user { get; set; }
 
         public string steam_page { get; set; }
+
+        public bool favorite { get; set; }
     }
 }
