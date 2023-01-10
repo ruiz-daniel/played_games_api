@@ -10,6 +10,8 @@ namespace DRG_Api.Models
 
         public string played_year { get; set; }
 
+        public float played_hours { get; set; }
+
         public string developer { get; set; }
 
         public string publisher { get; set; }
